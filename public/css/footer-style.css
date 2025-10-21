@@ -1,0 +1,80 @@
+.footer {
+    width: 100%;
+
+}
+.footer-bg {
+    background: var(--bg-color);
+    height: 22rem;
+}
+.footer-block {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 25%;
+    justify-content: space-between;
+}
+.footer-info p {
+    color: var(--text-secondary-color);
+}
+.footer-info-text {
+    color: var(--text-secondary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.footer-info-text h3 {
+    font-size: 1.5rem;
+    font-weight: var(--text-weight-medium);
+}
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 25%;
+    /*justify-content: space-between;*/
+}
+.footer-contacts p {
+    color: var(--text-secondary-color);
+}
+.footer-contacts-text {
+    color: var(--text-secondary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.footer-contacts-text h3 {
+    font-size: 1.5rem;
+    font-weight: var(--text-weight-medium);
+}
+.footer-contacts-text-p {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.network-icons {
+    width: 4rem;
+    display: flex;
+    height: 5rem;
+    align-items: flex-end;
+    gap: 1rem;
+}
+.network-icon {
+    height: 3rem;
+    cursor: pointer;
+}
+/*.network-icon:hover{*/
+/*    cursor: pointer;*/
+/*}*/
+.footer-map {
+    height: 90%;
+    display: flex;
+    align-items: flex-start;
+}

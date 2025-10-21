@@ -1,0 +1,23 @@
+.error {
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.error h1 {
+    font-size: 40vh;
+    color: transparent; 
+    -webkit-background-clip: text;
+    background-clip: text; 
+    background-image: linear-gradient(to bottom, #5A827F 25%, #F5C45D 75%);
+    position: relative;
+}
+.error img {
+    position: absolute;
+    z-index: 10;
+}
+.error h4 {
+    text-align: left;
+    font-size: 4vh;
+    font-weight: var(--text-weight-medium);
+}

@@ -1,0 +1,66 @@
+.login-register {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+}
+.login-register h2 {
+    font-size: 2.5rem;
+    font-weight: var(--text-weight-bold);
+    color: var(--accent-color2);
+}
+.login-register form {
+    margin: 2rem auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+.login-register fieldset {
+    background-color: var(--secondary-color);
+    border: 20px solid var(--secondary-color);
+}
+.login-register label {
+    margin-left: 2%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: var(--text-weight-light);
+}
+.login-register input {
+    border: none;
+    width: 90%;
+    height: 2vh;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid rgba(44, 44, 44, 0.3);
+
+}
+.login-register input:focus {
+    outline: none;
+}
+.login-register button {
+    height: 3rem;
+    width: 15rem;
+    font-size: 1.2rem;
+    align-self: end;
+    margin-bottom: 2%;
+    margin-right: 15%;
+}
+.go-to-register {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+.go-to-register p {
+    line-height: 1.5rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+.go-to-register a {
+    line-height: 1.5rem;
+    color: var(--accent-color2);
+    font-size: 1.2rem;
+}
+.go-to-register a:hover {
+    color: rgb(172, 192, 191);
+}

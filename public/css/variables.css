@@ -1,0 +1,49 @@
+@import url(../fonts/fonts.css);
+
+:root {
+    --base-color: #ffffff;
+    --secondary-color: #F6EFEE;
+    --bg-color: #2C2C2C;
+    --accent-color1: #F5C45D;
+    --accent-color2: #5A827F;
+
+    --text-color: #000000;
+    --text-secondary-color: #FFFFFF;
+    --text-other-color: #2C2C2C;
+
+    --text-size-default: 2vh;
+    --text-size-small: 1.5vh;
+    --text-size-medium: 3.5vh;
+    --text-size-headers: 4.5vh;
+
+    --text-weight: 400;
+    --text-weight-light: 300;
+    --text-weight-medium: 500;
+    --text-weight-semibold: 600;
+    --text-weight-bold: 700;
+    --text-weight-extrabold: 800;
+
+}
+
+body {
+    font-family: "Rubik";
+    font-optical-sizing: auto;
+    background-color: var(--base-color);
+    font-size: var(--text-size-default);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.wrapper {
+    /*overflow: hidden;*/
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+

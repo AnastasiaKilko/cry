@@ -1,0 +1,18 @@
+.shopping-bag {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+}
+.shopping-bag h2 {
+    font-size: 2.5rem;
+    font-weight: var(--text-weight-bold);
+    color: var(--accent-color2);
+}
+.shopping-bag p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--text-color);
+    margin: 2rem 2rem;
+}

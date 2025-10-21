@@ -8,11 +8,11 @@ class Authorship extends Model
 {
     public function book()
     {
-        return $this->hasMany(Book::class);
+        return $this->belongsTo(Book::class);
     }
     public function author()
     {
-        return $this->hasMany(Author::class);
+        return $this->belongsTo(Author::class);
     }
 
 }

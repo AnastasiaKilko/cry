@@ -1,0 +1,104 @@
+.e-book-head {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.e-book-head h3 {
+    font-size: 1.8rem;
+    font-weight: var(--text-weight-semibold);
+    color: var(--accent-color2);
+    margin: 2rem 0;
+}
+.e-book-settings {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+.e-book-setting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: 200ms;
+}
+.e-book-setting img {
+    height: 2rem;
+}
+.e-book-setting p {
+    font-size: 0.8rem;
+
+}
+
+.e-book-setting:hover img {
+    filter: drop-shadow(0 0 3px rgba(90, 130, 127, .9));
+}
+.e-book-setting:hover p {
+     color: rgba(90, 130, 127, .9);
+ }
+.e-book-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% auto;
+}
+.e-book-text h5 {
+    font-size: 1.5rem;
+    font-weight: var(--text-weight-medium);
+    line-height: 1.8rem;
+    text-align: center;
+}
+.e-book-text i {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+.e-book-text p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-align: center;
+
+}
+.e-book-slider {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 95%;
+    gap: 1rem;
+}
+.e-book-slider img {
+    height: 3rem;
+}
+.e-book-slider img:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.e-book-scale {
+    display: flex;
+    margin: 2% auto;
+    width: 90%;
+    background-color: rgba(90, 130, 127, .5);
+    border-radius: 5px;
+    height: 1.5rem;
+    position: relative;
+}
+.e-book-scale h5 {
+    font-size: 1rem;
+    font-weight: var(--text-weight-medium);
+    text-align: center;
+    align-self: center;
+    margin: 0 auto;
+    z-index: 200;
+}
+.progress-scale {
+    background-color: var(--accent-color2);
+    height: 100%;
+    width: 1%;
+    z-index: 100;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+}
+

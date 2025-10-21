@@ -1,0 +1,36 @@
+.personal-data legend {
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
+.personal-data label {
+    margin-left: 2%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: var(--text-weight-light);
+}
+.personal-data input {
+    border: none;
+    width: 90%;
+    height: 2vh;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid rgba(44, 44, 44, 0.3);
+}
+.personal-data input:focus {
+    outline: none;
+}
+.personal-data button {
+    height: 2rem;
+    width: 12rem;
+    font-size: 1rem;
+}
+.personal-data button:last-child {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    border: 1px solid var(--accent-color1);
+    cursor: pointer;;
+}
+.personal-data button:hover {
+    background-color: rgba(245, 196, 93, 0.5);
+    border: 1px transparent;
+    cursor: pointer;
+}
