@@ -9,33 +9,33 @@
 <body>
 <header>
     <div class="header-block">
-        <a href="main-page.html"><img src="img/logo.png" alt="logo"></a>
+        <a href={{ route('welcome') }}><img src="img/logo.png" alt="logo"></a>
         <div class="nav-and-search">
             <nav>
-                <a href="catalogue.html">Каталог</a>
-                <a href="e-catalogue.html">Электронная библиотека</a>
-                <a href="about-us.html">О нас</a>
-                <a href="about-us.html">Доставка</a>
-                <a href="special-offers.html">Акции</a>
-                <a href="e-book-reader.html">Читалка</a>
+                <a href={{ route('catalogue') }}>Каталог</a>
+                <a href={{ route('eCatalogue') }}>Электронная библиотека</a>
+                <a href={{ route('aboutUs') }}>О нас</a>
+                <a href={{ route('aboutUs') }}>Доставка</a>
+                <a href={{ route('specialOffers') }}>Акции</a>
+                <a href={{ route('eBookReader') }}>Читалка</a>
             </nav>
             <div class="search-line">
                 <form>
-                    <input type="text" name="search" placeholder="Введите текст..." size="100vw">
+                    <input type="text" name="search" placeholder="Введите текст...">
                 </form>
                 <img src="img/icons/search.svg" alt="search">
             </div>
         </div>
         <div class="icons">
-            <a class="icon" href="profile.html">
+            <a class="icon" href={{ route('profile') }}>
                 <img src="img/icons/profile.svg" alt="profile">
                 <p>Профиль</p>
             </a>
-            <a class="icon" href="shopping-bag.html">
+            <a class="icon" href={{ route('shoppingBag') }}>
                 <img src="img/icons/shopping%20bag.svg" alt="shopping bag">
                 <p>Корзина</p>
             </a>
-            <a class="icon" href="favourites.html">
+            <a class="icon" href={{ route('favourites') }}>
                 <img src="img/icons/heart.svg" alt="heart">
                 <p>Избранное</p>
             </a>

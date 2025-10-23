@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="modal-window">
-    <a href="book-page.html"><img src="img/button-icons/close.svg" alt="close"></a>
+    <a href={{ route('bookPage') }}><img src="img/button-icons/close.svg" alt="close"></a>
     <h2>Напишите отзыв!</h2>
     <form>
         <fieldset class="rating-stars">

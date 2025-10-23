@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="modal-window">
-    <a href="profile.html"><img src="img/button-icons/close.svg" alt="close"></a>
+    <a href={{ route('profile') }}><img src="img/button-icons/close.svg" alt="close"></a>
     <h2>Редактировать личные данные</h2>
     <form>
         <fieldset class="personal-data">

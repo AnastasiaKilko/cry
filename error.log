@@ -1,0 +1,13 @@
+[Wed Oct 22 20:25:26.430508 2025] [core:alert] [pid 1732157] [client 10.30.8.91:33126] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad flag delimiters, referer: http://wsr.ru/
+[Wed Oct 22 20:25:34.279095 2025] [core:alert] [pid 1732158] [client 10.30.8.91:33136] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad flag delimiters, referer: http://wsr.ru/
+[Wed Oct 22 20:25:34.868549 2025] [core:alert] [pid 1732159] [client 10.30.8.91:33148] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad flag delimiters, referer: http://wsr.ru/
+[Wed Oct 22 20:25:35.356638 2025] [core:alert] [pid 1732160] [client 10.30.8.91:45834] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad flag delimiters, referer: http://wsr.ru/
+[Wed Oct 22 20:25:40.517353 2025] [core:alert] [pid 1732162] [client 10.30.8.91:45844] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad flag delimiters, referer: http://wsr.ru/
+[Wed Oct 22 20:25:40.956927 2025] [core:alert] [pid 1732163] [client 10.30.8.91:45856] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad flag delimiters, referer: http://wsr.ru/
+[Wed Oct 22 20:28:31.342741 2025] [php:error] [pid 1733879] [client 10.30.8.91:57598] script '/srv/users/keyuejuh/zaijxnz-m1/index.php' not found or unable to stat, referer: http://wsr.ru/
+[Wed Oct 22 20:28:32.167670 2025] [php:error] [pid 1733879] [client 10.30.8.91:57598] script '/srv/users/keyuejuh/zaijxnz-m1/index.php' not found or unable to stat, referer: http://wsr.ru/
+[Wed Oct 22 20:34:21.642759 2025] [core:alert] [pid 1737093] [client 10.30.8.91:34280] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad argument line '(.*)/web/$1', referer: http://wsr.ru/
+[Wed Oct 22 20:34:28.926116 2025] [core:alert] [pid 1737112] [client 10.30.8.91:34294] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad argument line '(.*)/public/$1', referer: http://wsr.ru/
+[Wed Oct 22 20:34:35.651697 2025] [core:alert] [pid 1737113] [client 10.30.8.91:47666] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad argument line '(.*)/public/1', referer: http://wsr.ru/
+[Wed Oct 22 20:34:39.189964 2025] [core:alert] [pid 1737121] [client 10.30.8.91:40332] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad argument line '(.*)/public', referer: http://wsr.ru/
+[Wed Oct 22 20:34:39.687566 2025] [core:alert] [pid 1737122] [client 10.30.8.91:40344] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad argument line '(.*)/public', referer: http://wsr.ru/

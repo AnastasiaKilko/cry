@@ -12,6 +12,17 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    public $timestamps = false;
+    protected $table = 'users';
+
+    public mixed $surname;
+    public mixed $name;
+    public mixed $patronymic;
+    public mixed $login;
+    public mixed $phone_number;
+    public mixed $email;
+    public mixed $password;
+
     /**
      * The attributes that are mass assignable.
      *
