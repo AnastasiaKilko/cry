@@ -46,6 +46,8 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
+Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('login');
+
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
@@ -67,3 +69,5 @@ Route::get('/shopping-bag', function () {
 Route::get('/special-offers', function () {
     return view('specialOffers');
 })->name('specialOffers');
+
+Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');

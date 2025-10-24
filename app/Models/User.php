@@ -15,14 +15,6 @@ class User extends Authenticatable
     public $timestamps = false;
     protected $table = 'users';
 
-    public mixed $surname;
-    public mixed $name;
-    public mixed $patronymic;
-    public mixed $login;
-    public mixed $phone_number;
-    public mixed $email;
-    public mixed $password;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -50,17 +42,6 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'password' => 'hashed',
-        ];
-    }
     public function order()
     {
         return $this->hasMany(Order::class);

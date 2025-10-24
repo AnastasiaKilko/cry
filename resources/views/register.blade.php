@@ -40,6 +40,13 @@
                     <img src="img/icons/heart.svg" alt="heart">
                     <p>Избранное</p>
                 </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button class="logout-button" type="submit"><a class="icon" href={{ route('login') }}>
+                            <img src="img/icons/logout.svg" alt="logout">
+                            <p>Выйти</p>
+                        </a></button>
+                </form>
             </div>
         </div>
     </header>
@@ -58,13 +65,13 @@
                     <label for="login">Введите логин</label><br>
                     <input type="text" id="login" placeholder="exampleLogin2000" name="login"><br><br>
                     <label for="phone-number">Введите номер телефона</label><br>
-                    <input type="tel" id="phone-number" placeholder="+7(999)123-45-67" name="phone-number"><br><br>
+                    <input type="tel" id="phone-number" placeholder="+7(999)123-45-67" name="phone_number"><br><br>
                     <label for="email">Введите email</label><br>
                     <input type="email" id="email" placeholder="example@mail.com" name="email"><br><br>
                     <label for="pass1">Введите пароль</label><br>
                     <input type="password" id="pass1" name="password"><br><br>
-{{--                    <label for="pass2">Повторите пароль</label><br>--}}
-{{--                    <input type="password" id="pass2"><br><br>--}}
+                    <label for="pass2">Повторите пароль</label><br>
+                    <input type="password" id="pass2" name="confirm_password"><br><br>
                 </fieldset>
                 <button class="yellow-btn" type="submit">Зарегистрироваться</button>
             </form>

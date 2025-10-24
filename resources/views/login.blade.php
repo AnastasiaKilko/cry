@@ -40,21 +40,30 @@
                     <img src="img/icons/heart.svg" alt="heart">
                     <p>Избранное</p>
                 </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button class="logout-button" type="submit"><a class="icon" href={{ route('login') }}>
+                            <img src="img/icons/logout.svg" alt="logout">
+                            <p>Выйти</p>
+                        </a></button>
+                </form>
             </div>
         </div>
     </header>
     <main>
         <section class="login-register">
             <h2>Вход</h2>
-            <form>
+            <form action="{{route('login')}}" method="post">
+                @csrf
                 <fieldset class="log-in">
                     <label for="login">Введите логин</label><br>
-                    <input type="text" id="login" placeholder="Ваш логин"><br><br>
+                    <input type="text" id="login" placeholder="Ваш логин" name="login"><br><br>
                     <label for="pass1">Введите пароль</label><br>
-                    <input type="password" id="pass1" placeholder="Ваш пароль"><br><br>
+                    <input type="password" id="pass1" placeholder="Ваш пароль" name="password"><br><br>
                 </fieldset>
+                <button class="yellow-btn" type="submit">Войти</button>
             </form>
-            <button onclick="document.location='profile.html'" class="yellow-btn">Войти</button>
+
             <div class="go-to-register">
                 <p>Ещё не зарегистрировались?</p>
                 <a href={{ route('register') }}>Перейти к регистрации</a>

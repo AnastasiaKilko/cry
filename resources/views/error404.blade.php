@@ -39,6 +39,13 @@
                 <img src="img/icons/heart.svg" alt="heart">
                 <p>Избранное</p>
             </a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button class="logout-button" type="submit"><a class="icon" href={{ route('login') }}>
+                        <img src="img/icons/logout.svg" alt="logout">
+                        <p>Выйти</p>
+                    </a></button>
+            </form>
         </div>
     </div>
 </header>

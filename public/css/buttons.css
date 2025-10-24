@@ -103,3 +103,9 @@
     transition: 200ms;
 }
 
+.logout-button {
+    border: none;
+    outline: none;
+    background-color: var(--base-color);
+}
+

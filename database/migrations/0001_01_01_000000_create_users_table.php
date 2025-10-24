@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('patronymic');
             $table->string('login')->unique();
-            $table->decimal('phone_number', 11);
+            $table->string('phone_number', 11);
             $table->string('email')->unique();
             $table->string('password');
             $table->date('birth_date')->nullable();
