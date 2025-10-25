@@ -1,4 +1,9 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url("../fonts/Rubik.ttf");
+}
 .to-bag-btn {
+    font-family: 'Rubik';
     width: 8rem;
     height: 2rem;
     border-radius: 10px;
@@ -13,6 +18,7 @@
     cursor: pointer;
 }
 .to-fav-btn {
+    font-family: 'Rubik';
     width: 8rem;
     height: 2rem;
     border-radius: 10px;
@@ -27,6 +33,7 @@
     cursor: pointer;
 }
 .blue-btn {
+    font-family: 'Rubik';
     width: 22rem;
     height: 4rem;
     border-radius: 10px;
@@ -42,6 +49,7 @@
     cursor: pointer;
 }
 .yellow-btn {
+    font-family: 'Rubik';
     width: 22rem;
     height: 4rem;
     border-radius: 10px;
@@ -104,8 +112,22 @@
 }
 
 .logout-button {
+    font-family: 'Rubik';
     border: none;
     outline: none;
     background-color: var(--base-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
 }
-
+.logout-button p {
+    font-size: var(--text-size-small);
+    color: var(--text-color);
+}
+.logout-button:hover p {
+    color: rgba(245, 196, 93, .9);
+}
+.logout-button:hover img {
+    filter: drop-shadow(0 0 3px rgba(245, 196, 93, .9));
+}

@@ -10,7 +10,8 @@
 <div class="modal-window">
     <a href={{ route('bookPage') }}><img src="img/button-icons/close.svg" alt="close"></a>
     <h2>Напишите отзыв!</h2>
-    <form>
+    <form action="{{route('reviewModalPage')}}" method="post">
+        @csrf
         <fieldset class="rating-stars">
             <legend>Оцените книгу, её электронный вариант или доставку</legend>
             <input type="radio" id="star1" name="rating" value="1"/>
@@ -28,7 +29,7 @@
             <legend>Напишите Ваше мнение о книге, её электронном варианте или доставке</legend>
             <textarea maxlength="500" placeholder="Введите текст..."></textarea>
         </fieldset>
-        <button class="yellow-btn">Опубликовать</button>
+        <button type="submit" class="yellow-btn">Опубликовать</button>
     </form>
 </div>
 </body>

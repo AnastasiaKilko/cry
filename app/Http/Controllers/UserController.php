@@ -34,16 +34,26 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        $user = User::where('login', $request->input('login'))->first();
-
-        Auth::login($user);
+        if(Auth::attempt(['login' => $request->input('login'), 'password' => $request->input('password')])){
+            $request->session()->regenerate();
+        }
 
         return redirect('/profile');
     }
 
     public function logout()
     {
-        Auth::logout();
-        return redirect('/login');
+        return var_dump(Auth::user());
+    }
+
+    public function logout1(Request $request)
+    {
+//        Auth::logout();
+//
+//        $request->session()->flush();
+//        $request->session()->invalidate();
+//        $request->session()->regenerateToken();
+
+        return var_dump($request->session());
     }
 }

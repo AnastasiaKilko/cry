@@ -62,6 +62,8 @@ Route::get('/review-modal-page', function () {
     return view('reviewModalPage');
 })->name('reviewModalPage');
 
+Route::post('/review-modal-page', [\App\Http\Controllers\UserController::class, 'reviewModalPage'])->name('reviewModalPage');
+
 Route::get('/shopping-bag', function () {
     return view('shoppingBag');
 })->name('shoppingBag');
@@ -71,3 +73,5 @@ Route::get('/special-offers', function () {
 })->name('specialOffers');
 
 Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');
+
+Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout1'])->name('logout');

@@ -70,6 +70,12 @@ header .icons p {
     font-size: var(--text-size-small);
     color: var(--text-color);
 }
+
+header .logout-button p {
+    font-size: var(--text-size-small);
+    color: var(--text-color);
+}
+
 header .icons .icon {
     cursor: pointer;
     display: flex;

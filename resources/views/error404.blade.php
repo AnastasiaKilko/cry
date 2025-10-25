@@ -41,10 +41,10 @@
             </a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button class="logout-button" type="submit"><a class="icon" href={{ route('login') }}>
-                        <img src="img/icons/logout.svg" alt="logout">
-                        <p>Выйти</p>
-                    </a></button>
+                <button class="logout-button" type="submit">
+                    <img src="img/icons/logout.svg" alt="logout">
+                    <p>Выйти</p>
+                </button>
             </form>
         </div>
     </div>
