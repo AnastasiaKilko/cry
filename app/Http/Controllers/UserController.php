@@ -13,47 +13,58 @@ class UserController extends Controller
 
     public function register(Request $request)
     {
+            $validated = $request->validate([
+                'surname' => 'required|max:20',
+                'name' => 'required|max:20',
+                'patronymic' => 'required|max:20',
+                'login' => 'required|unique:users|max:15',
+                'phone_number' => 'required|max:11',
+                'email' => 'required',
+                'password' => 'required|min:8',
+            ]);
+
         $user = new User();
-        $user->surname = $request->input('surname');
-        $user->name = $request->input('name');
-        $user->patronymic = $request->input('patronymic');
-        $user->login = $request->input('login');
-        $user->phone_number = $request->input('phone_number');
-        $user->email = $request->input('email');
-        $user->password = $request->input('password');
+        $user->surname = $validated['surname'];
+        $user->name = $validated['name'];
+        $user->patronymic = $validated['patronymic'];
+        $user->login = $validated['login'];
+        $user->phone_number = $validated['phone_number'];
+        $user->email = $validated['email'];
+        $user->password =  $validated['password'];
 
         $confirm_password = $request->input('confirm_password');
 
-        if($user->password == $confirm_password){
+        if ($user->password == $confirm_password) {
             $user->password = Hash::make($user->password);
             $user->save();
+
+            Auth::login($user);
+
             return redirect('/profile');
         }
         return redirect('/register');
     }
 
+    public function profile()
+    {
+        return view('profile');
+    }
+
     public function login(Request $request)
     {
-        if(Auth::attempt(['login' => $request->input('login'), 'password' => $request->input('password')])){
-            $request->session()->regenerate();
+        if (Auth::attempt(credentials: $request->only('login', 'password'))) {
+            return redirect('/profile');
         }
 
-        return redirect('/profile');
+        return redirect('/login');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        return var_dump(Auth::user());
-    }
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-    public function logout1(Request $request)
-    {
-//        Auth::logout();
-//
-//        $request->session()->flush();
-//        $request->session()->invalidate();
-//        $request->session()->regenerateToken();
-
-        return var_dump($request->session());
+        return redirect('/login');
     }
 }
