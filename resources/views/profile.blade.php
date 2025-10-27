@@ -16,7 +16,10 @@
                 <h3>Личные данные</h3>
                 <div class="profile-info-data">
                     <div class="profile-info-data-main">
-{{--                        <p>{{ $user->name }}</p>--}}
+                        <h5>{{ $user->login }}</h5>
+                        <p>{{ $user->surname }} {{ $user->name }} {{ $user->patronymic }}</p>
+                        <p>{{ $user->phone_number }}</p>
+                        <p>{{ $user->email }}</p>
                     </div>
                     <button onclick="document.location='change-personal-data-modal.html'" class="yellow-btn">Редактировать</button>
                 </div>
@@ -24,14 +27,14 @@
             <div class="profile-orders">
                 <div class="catalogue-heading">
                     <h3>Активные заказы</h3>
-                    <img src="img/icons/paper-book.svg" alt="paper book">
+                    <img src="{{ asset('img/icons/paper-book.svg') }}" alt="paper book">
                 </div>
                 <p>У вас пока нет активных заказов</p>
             </div>
             <div class="profile-e-books">
                 <div class="catalogue-heading">
                     <h3>Ваши электронные книги</h3>
-                    <img src="img/icons/e-book.svg" alt="paper book">
+                    <img src="{{ asset('img/icons/e-book.svg') }}" alt="e-book">
                 </div>
                 <table>
                     <thead>

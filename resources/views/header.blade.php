@@ -29,7 +29,7 @@
             </div>
             <div class="icons">
                 @if (Auth::check())
-                    <a class="icon" href={{ route('profile')}}>
+                    <a class="icon" href={{ route('profile',  ['id' => auth()->user()->id]) }}>
                         <img src="img/icons/profile.svg" alt="profile">
                         <p>Профиль</p>
                     </a>

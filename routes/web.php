@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -46,23 +47,21 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::post('/login', [\App\Http\Controllers\UserController::class, 'login'])->name('login');
+Route::post('/login', [UserController::class, 'login'])->name('login');
 
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
+Route::get('/profile/{id}', [UserController::class, 'profile'])->name('profile');
 
 Route::get('/register', function () {
     return view('register');
 })->name('register');
 
-Route::post('/register', [\App\Http\Controllers\UserController::class, 'register'])->name('register');
+Route::post('/register', [UserController::class, 'register'])->name('register');
 
 Route::get('/review-modal-page', function () {
     return view('reviewModalPage');
 })->name('reviewModalPage');
 
-Route::post('/review-modal-page', [\App\Http\Controllers\UserController::class, 'reviewModalPage'])->name('reviewModalPage');
+Route::post('/review-modal-page', [UserController::class, 'reviewModalPage'])->name('reviewModalPage');
 
 Route::get('/shopping-bag', function () {
     return view('shoppingBag');
@@ -72,6 +71,6 @@ Route::get('/special-offers', function () {
     return view('specialOffers');
 })->name('specialOffers');
 
-Route::post('/logout', [\App\Http\Controllers\UserController::class, 'logout'])->name('logout');
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
-Route::get('/logout', [\App\Http\Controllers\UserController::class, 'logout1'])->name('logout');
+Route::get('/logout', [UserController::class, 'logout1'])->name('logout');

@@ -13,15 +13,15 @@ class UserController extends Controller
 
     public function register(Request $request)
     {
-            $validated = $request->validate([
-                'surname' => 'required|max:20',
-                'name' => 'required|max:20',
-                'patronymic' => 'required|max:20',
-                'login' => 'required|unique:users|max:15',
-                'phone_number' => 'required|max:11',
-                'email' => 'required',
-                'password' => 'required|min:8',
-            ]);
+        $validated = $request->validate([
+            'surname' => 'required|max:20',
+            'name' => 'required|max:20',
+            'patronymic' => 'required|max:20',
+            'login' => 'required|unique:users|max:15',
+            'phone_number' => 'required|max:11',
+            'email' => 'required',
+            'password' => 'required|min:8',
+        ]);
 
         $user = new User();
         $user->surname = $validated['surname'];
@@ -30,7 +30,7 @@ class UserController extends Controller
         $user->login = $validated['login'];
         $user->phone_number = $validated['phone_number'];
         $user->email = $validated['email'];
-        $user->password =  $validated['password'];
+        $user->password = $validated['password'];
 
         $confirm_password = $request->input('confirm_password');
 
@@ -45,9 +45,10 @@ class UserController extends Controller
         return redirect('/register');
     }
 
-    public function profile()
+    public function profile($id)
     {
-        return view('profile');
+        $user = User::findOrFail($id);
+        return view('profile', ['user' => $user]);
     }
 
     public function login(Request $request)
