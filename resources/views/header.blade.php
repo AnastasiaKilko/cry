@@ -24,21 +24,21 @@
                     <form>
                         <input type="text" name="search" placeholder="Введите текст...">
                     </form>
-                    <img src="img/icons/search.svg" alt="search">
+                    <img src="{{ asset('img/icons/search.svg') }}" alt="search">
                 </div>
             </div>
             <div class="icons">
                 @if (Auth::check())
                     <a class="icon" href={{ route('profile',  ['id' => auth()->user()->id]) }}>
-                        <img src="img/icons/profile.svg" alt="profile">
+                        <img src="{{ asset('img/icons/profile.svg') }}" alt="profile">
                         <p>Профиль</p>
                     </a>
                     <a class="icon" href={{ route('shoppingBag') }}>
-                        <img src="img/icons/shopping%20bag.svg" alt="shopping bag">
+                        <img src="{{ asset('img/icons/shopping%20bag.svg') }}" alt="shopping bag">
                         <p>Корзина</p>
                     </a>
                     <a class="icon" href={{ route('favourites') }}>
-                        <img src="img/icons/heart.svg" alt="heart">
+                        <img src="{{ asset('img/icons/heart.svg') }}" alt="heart">
                         <p>Избранное</p>
                     </a>
                 @endif
@@ -46,7 +46,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <button class="logout-button" type="submit">
-                            <img src="img/icons/login.svg" alt="login">
+                            <img src="{{ asset('img/icons/login.svg') }}" alt="login">
                             <p>Войти</p>
                         </button>
                     </form>
@@ -55,7 +55,7 @@
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button class="logout-button" type="submit">
-                            <img src="img/icons/logout.svg" alt="logout">
+                            <img src="{{ asset('img/icons/logout.svg') }}" alt="logout">
                             <p>Выйти</p>
                         </button>
                     </form>

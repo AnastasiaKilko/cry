@@ -12,7 +12,7 @@
     <main>
         <section class="book-info">
             <article class="book-info-main">
-                <img src="img/bookcover1.jpg" alt="А.С.Пушкин, Евгений Онегин">
+                <img src="{{ asset('img/bookcover1.jpg') }}" alt="А.С.Пушкин, Евгений Онегин">
                 <div class="book-info-main-table">
                     <h3>А.С.Пушкин Евгений Онегин</h3>
                     <table>
@@ -54,7 +54,7 @@
                             <td>370</td>
                         </tr>
                         <tr>
-                            <td>Вес, Мб</td>
+                            <td>Размер файла, Мб</td>
                             <td>78</td>
                         </tr>
                         <tr>
@@ -67,11 +67,11 @@
                 <div class="book-info-main-interaction">
                     <div class="book-info-main-interaction-variables">
                         <div class="paper-book">
-                            <img src="img/icons/paper-book.svg" alt="paper book">
+                            <img src="{{ asset('img/icons/paper-book.svg') }}" alt="paper book">
                             <h5>650 ₽</h5>
                         </div>
                         <div class="e-book">
-                            <img src="img/icons/e-book.svg" alt="e-book">
+                            <img src="{{ asset('img/icons/e-book.svg') }}" alt="e-book">
                             <h5>350 ₽</h5>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
             <div class="book-reviews-table">
                 <article class="book-review">
                     <div class="book-review-pic-date">
-                        <img src="img/icons/profile-circle.svg" alt="profile picture">
+                        <img src="{{ asset('img/icons/profile-circle.svg') }}" alt="profile picture">
                         <p>21.10.2023</p>
                     </div>
                     <div class="book-review-main">
@@ -114,7 +114,7 @@
                 </article>
                 <article class="book-review">
                     <div class="book-review-pic-date">
-                        <img src="img/icons/profile-circle.svg" alt="profile picture">
+                        <img src="{{ asset('img/icons/profile-circle.svg') }}" alt="profile picture">
                         <p>21.10.2023</p>
                     </div>
                     <div class="book-review-main">
@@ -133,7 +133,7 @@
                 </article>
                 <article class="book-review">
                     <div class="book-review-pic-date">
-                        <img src="img/icons/profile-circle.svg" alt="profile picture">
+                        <img src="{{ asset('img/icons/profile-circle.svg') }}" alt="profile picture">
                         <p>21.10.2023</p>
                     </div>
                     <div class="book-review-main">
@@ -152,7 +152,7 @@
                 </article>
                 <article class="book-review">
                     <div class="book-review-pic-date">
-                        <img src="img/icons/profile-circle.svg" alt="profile picture">
+                        <img src="{{ asset('img/icons/profile-circle.svg') }}" alt="profile picture">
                         <p>21.10.2023</p>
                     </div>
                     <div class="book-review-main">
@@ -170,7 +170,10 @@
                     </div>
                 </article>
             </div>
-            <button onclick="document.location='review-modal-page.html'" class="yellow-btn">Напишите отзыв!</button>
+
+                <button class="yellow-btn">Напишите отзыв!</button>
+
+
         </section>
     </main>
     @include('footer')

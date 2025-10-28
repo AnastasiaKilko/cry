@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('book_types', function (Blueprint $table) {
+        Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['paper-book', 'e-book']);
+            $table->foreignId('id_books');
+            $table->foreignId('id_user');
+            $table->enum('rating', ['1', '2', '3', '4', '5']);
+            $table->string('text');
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('book_types');
+        Schema::dropIfExists('reviews');
     }
 };

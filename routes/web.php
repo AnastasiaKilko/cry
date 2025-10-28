@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
 
@@ -27,9 +28,9 @@ Route::get('/catalogue', function () {
     return view('catalogue');
 })->name('catalogue');
 
-Route::get('/change-personal-data', function () {
-    return view('changePersonalDataModel');
-})->name('changePersonalDataModel');
+Route::get('/create-book', function () {
+    return view('createBook');
+})->name('createBook');
 
 Route::get('/e-book-reader', function () {
     return view('eBookReader');
@@ -57,11 +58,6 @@ Route::get('/register', function () {
 
 Route::post('/register', [UserController::class, 'register'])->name('register');
 
-Route::get('/review-modal-page', function () {
-    return view('reviewModalPage');
-})->name('reviewModalPage');
-
-Route::post('/review-modal-page', [UserController::class, 'reviewModalPage'])->name('reviewModalPage');
 
 Route::get('/shopping-bag', function () {
     return view('shoppingBag');

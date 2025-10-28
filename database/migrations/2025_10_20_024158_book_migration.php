@@ -17,6 +17,15 @@ return new class extends Migration
             $table->string('ISBN');
             $table->foreignId('id_age_limit');
             $table->foreignId('id_book_types');
+            $table->unsignedSmallInteger('pages')->nullable();
+            $table->string('size')->nullable();
+            $table->enum('book_cover', ['hardcover', 'softcover'])->nullable();
+            $table->unsignedMediumInteger('copies')->nullable();
+            $table->unsignedSmallInteger('weight')->nullable();
+            $table->unsignedSmallInteger('filesize')->nullable();
+            $table->string('file_format')->nullable();
+            $table->decimal('price', 8, 2)->nullable();
+            $table->string('e-book-link')->nullable();
         });
     }
 

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_users');
-            $table->foreignId('id_book_types');
+            $table->foreignId('id_books');
             $table->timestamp('order_date', 0);
             $table->foreignId('id_delivery_ways');
             $table->foreignId('id_special_offers');

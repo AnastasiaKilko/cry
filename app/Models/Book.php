@@ -9,6 +9,15 @@ class Book extends Model
     protected $fillable = [
         'name',
         'ISBN',
+        'pages',
+        'size',
+        'book_cover',
+        'copies',
+        'weight',
+        'filesize',
+        'file_format',
+        'price',
+        'e_book_link',
     ];
     public function booksType()
     {
@@ -25,5 +34,12 @@ class Book extends Model
     public function publication()
     {
         return $this->hasMany(Publication::class);
+    }
+    public function review() {
+        return $this->hasMany(Review::class);
+    }
+    public function order()
+    {
+        return $this->hasMany(Order::class);
     }
 }
