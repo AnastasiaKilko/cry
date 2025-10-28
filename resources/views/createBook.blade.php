@@ -19,13 +19,13 @@
                     <input type="text" id="name" name="name"><br><br>
                     <label for="ISBN">Введите ISBN</label><br>
                     <input type="text" id="ISBN" placeholder="000-0-00000-000-0" name="ISBN"><br><br>
-                    <label for="age_limit_type">Выберите возрастное ограничение</label><br>
-                    <select id="age_limit_type" name="age_limit_type">
-                        <option value="0+">0+</option>
-                        <option value="6+">6+</option>
-                        <option value="12+">12+</option>
-                        <option value="16+">16+</option>
-                        <option value="18+">18+</option>
+                    <label for="id_age_limit">Выберите возрастное ограничение</label><br>
+                    <select id="id_age_limit" name="id_age_limit">
+                        <option value="1">0+</option>
+                        <option value="2">6+</option>
+                        <option value="3">12+</option>
+                        <option value="4">16+</option>
+                        <option value="5">18+</option>
                     </select><br><br>
                     <label for="type">Выберите тип книги</label><br>
                     <select id="type" name="type">

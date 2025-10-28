@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,8 @@ Route::get('/catalogue', function () {
 Route::get('/create-book', function () {
     return view('createBook');
 })->name('createBook');
+
+Route::post('/create-book', [BookController::class, 'create'])->name('createBook');
 
 Route::get('/e-book-reader', function () {
     return view('eBookReader');

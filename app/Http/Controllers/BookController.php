@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function create(Request $request, $age_limit, $book_type) {
+    public function create(Request $request) {
 
         $book = Book::create([
             'name' =>  $request->input('name'),
@@ -25,30 +25,30 @@ class BookController extends Controller
             'file_format' => $request->input('file_format'),
             'price' => $request->input('price'),
             'e_book_link' => $request->input('e_book_link'),
-            'age_limit_type' => $age_limit->id,
-            'type' => $book_type->id,
+            'id_age_limit' => $request->input('id_age_limit'),
+            'id_book_types' => $request->input('type'),
         ]);
 
-        $author = Author::create([
-            'surname' =>  $request->input('surname'),
-            'name' => $request->input('name'),
-            'patronymic' => $request->input('patronymic'),
-        ]);
-
-        $publisher = Publisher::create([
-            'name' =>  $request->input('name'),
-        ]);
-
-        $authorship = Authorship::create([
-            'book_id' => $book->id,
-            'author_id' => $author->id,
-        ]);
-
-        $publication = Publication::create([
-            'book_id' => $book->id,
-            'publisher_id' => $publisher->id,
-            'release_year' => $request->input('release_year'),
-        ]);
+//        $author = Author::create([
+//            'surname' =>  $request->input('surname'),
+//            'name' => $request->input('name'),
+//            'patronymic' => $request->input('patronymic'),
+//        ]);
+//
+//        $publisher = Publisher::create([
+//            'name' =>  $request->input('name'),
+//        ]);
+//
+//        $authorship = Authorship::create([
+//            'book_id' => $book->id,
+//            'author_id' => $author->id,
+//        ]);
+//
+//        $publication = Publication::create([
+//            'book_id' => $book->id,
+//            'publisher_id' => $publisher->id,
+//            'release_year' => $request->input('release_year'),
+//        ]);
 
 
     }
