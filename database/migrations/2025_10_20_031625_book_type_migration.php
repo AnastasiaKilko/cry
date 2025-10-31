@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('book_types', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', ['paper-book', 'e-book']);
+            $table->enum('type', ['выберите тип книги', 'paper-book', 'e-book']);
         });
     }
 

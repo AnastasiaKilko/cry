@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+    public $timestamps = false;
     protected $table = 'reviews';
 
     protected $fillable = [
+        'id_books',
+        'id_user',
         'rating',
         'text',
     ];

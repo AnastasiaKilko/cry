@@ -21,17 +21,16 @@
                     <input type="text" id="ISBN" placeholder="000-0-00000-000-0" name="ISBN"><br><br>
                     <label for="id_age_limit">Выберите возрастное ограничение</label><br>
                     <select id="id_age_limit" name="id_age_limit">
-                        <option value="1">0+</option>
-                        <option value="2">6+</option>
-                        <option value="3">12+</option>
-                        <option value="4">16+</option>
-                        <option value="5">18+</option>
+                        @foreach ($age as $age_limit)
+                            <option value="{{ $age_limit->id }}">{{ $age_limit->age_limit_type }}</option>
+                        @endforeach
                     </select><br><br>
-                    <label for="type">Выберите тип книги</label><br>
-                    <select id="type" name="type">
-                        <option value="-"></option>
-                        <option value="paper-book">Бумажная книга</option>
-                        <option value="e-book">Электронная книга</option>
+
+                    <label for="id_book_types">Выберите тип книги</label><br>
+                    <select id="id_book_types" name="id_book_types">
+                        @foreach($type as $book_type)
+                            <option value="{{ $book_type->id }}">{{ $book_type->type }}</option>
+                        @endforeach
                     </select><br><br>
 
                     <label for="pages">Введите количество страниц</label><br>
@@ -77,14 +76,14 @@
 
 
 <script>
-    document.getElementById('type').addEventListener('change', function () {
-        if (this.value === 'paper-book') {
+    document.getElementById('id_book_types').addEventListener('change', function () {
+        if (this.value === '2') {
             document.getElementById('paper-book-fields').style.display = 'block';
         } else {
             document.getElementById('paper-book-fields').style.display = 'none';
         }
 
-        if (this.value === 'e-book') {
+        if (this.value === '3') {
             document.getElementById('e-book-fields').style.display = 'block';
         } else {
             document.getElementById('e-book-fields').style.display = 'none';

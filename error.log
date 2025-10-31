@@ -11,3 +11,4 @@
 [Wed Oct 22 20:34:35.651697 2025] [core:alert] [pid 1737113] [client 10.30.8.91:47666] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad argument line '(.*)/public/1', referer: http://wsr.ru/
 [Wed Oct 22 20:34:39.189964 2025] [core:alert] [pid 1737121] [client 10.30.8.91:40332] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad argument line '(.*)/public', referer: http://wsr.ru/
 [Wed Oct 22 20:34:39.687566 2025] [core:alert] [pid 1737122] [client 10.30.8.91:40344] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad argument line '(.*)/public', referer: http://wsr.ru/
+[Thu Oct 30 18:43:32.395214 2025] [core:alert] [pid 1083118] [client 10.30.8.42:55558] /srv/users/keyuejuh/zaijxnz-m1/.htaccess: RewriteRule: bad flag delimiters, referer: http://wsr.ru/

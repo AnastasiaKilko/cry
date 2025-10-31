@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     public $timestamps = false;
+    protected $table = 'books';
 
     protected $fillable = [
         'name',
         'ISBN',
+        'id_age_limit',
+        'id_book_types',
         'pages',
         'size',
         'book_cover',

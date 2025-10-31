@@ -40,7 +40,7 @@ class UserController extends Controller
 
             Auth::login($user);
 
-            return redirect('/welcome');
+            return redirect('/');
         }
         return redirect('/register');
     }
@@ -48,13 +48,13 @@ class UserController extends Controller
     public function profile($id)
     {
         $user = User::findOrFail($id);
-        return view('profile', ['user' => $user]);
+        return view('/profile', ['user' => $user]);
     }
 
     public function login(Request $request)
     {
         if (Auth::attempt(credentials: $request->only('login', 'password'))) {
-            return redirect('/profile');
+            return redirect('/');
         }
 
         return redirect('/login');

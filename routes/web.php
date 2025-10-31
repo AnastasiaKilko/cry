@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
@@ -29,9 +29,11 @@ Route::get('/catalogue', function () {
     return view('catalogue');
 })->name('catalogue');
 
-Route::get('/create-book', function () {
-    return view('createBook');
-})->name('createBook');
+//Route::get('/create-book', function () {
+//    return view('createBook');
+//})->name('createBook');
+
+Route::get('/create-book', [BookController::class, 'index'])->name('createBook');
 
 Route::post('/create-book', [BookController::class, 'create'])->name('createBook');
 
