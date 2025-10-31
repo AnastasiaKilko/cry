@@ -15,6 +15,7 @@
             <form action="{{route('createBook')}}" method="post">
                 @csrf
                 <fieldset class="register">
+                    <legend>Информация о книге</legend><br><br>
                     <label for="name">Введите название книги</label><br>
                     <input type="text" id="name" name="name"><br><br>
                     <label for="ISBN">Введите ISBN</label><br>
@@ -43,8 +44,8 @@
                         <input type="text" id="size" placeholder="10x10x10" name="size"><br><br>
                         <label for="book_cover">Выберите тип обложки</label><br>
                         <select id="book_cover" name="book_cover">
-                            <option value="hardcover">Твёрдый переплёт</option>
-                            <option value="softcover">Мягкая обложка</option>
+                            <option value="Твёрдая обложка">Твёрдый переплёт</option>
+                            <option value="Мягкая обложка">Мягкая обложка</option>
                         </select><br><br>
                         <label for="copies">Введите тираж</label><br>
                         <input type="text" id="copies" placeholder="10000" name="copies"><br><br>
@@ -64,6 +65,29 @@
 
 
                 </fieldset>
+
+                <fieldset class="register">
+                    <legend>Информация об авторе</legend><br><br>
+                    <label for="surname">Введите фамилию автора</label><br>
+                    <input type="text" id="surname" placeholder="Иванов" name="surname"><br><br>
+                    <label for="name">Введите имя автора</label><br>
+                    <input type="text" id="name" placeholder="Иван" name="name"><br><br>
+                    <label for="patronymic">Введите отчество автора</label><br>
+                    <input type="text" id="patronymic" placeholder="Иванович" name="patronymic"><br><br>
+                </fieldset>
+
+                <fieldset class="register">
+                    <legend>Информация об издательстве</legend><br><br>
+                    <label for="publisher_name">Введите название издательства</label><br>
+                    <input type="text" id="publisher_name" placeholder="Эксмо" name="publisher_name"><br><br>
+                </fieldset>
+
+                <fieldset class="register">
+                    <legend>Информация об издании</legend><br><br>
+                    <label for="release_year">Введите год издательства</label><br>
+                    <input type="text" id="release_year" placeholder="2020" name="release_year"><br><br>
+                </fieldset>
+
                 <button class="yellow-btn" type="submit">Сохранить</button>
 
             </form>

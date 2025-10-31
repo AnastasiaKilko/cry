@@ -9,7 +9,7 @@ class Publisher extends Model
     public $timestamps = false;
     protected $table = 'publishers';
     protected $fillable = [
-        'name',
+        'publisher_name',
     ];
     public function publication()
     {

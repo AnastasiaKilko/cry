@@ -23,6 +23,7 @@ class BookController extends Controller
 
     public function create(Request $request) {
 
+
         $book = Book::create([
             'name' =>  $request->input('name'),
             'ISBN' => $request->input('ISBN'),
@@ -39,28 +40,39 @@ class BookController extends Controller
             'e_book_link' => $request->input('e_book_link'),
         ]);
 
-        $book->save();
+        $author = Author::where('surname', $request->input('surname'))
+            ->where('name', $request->input('name'))
+            ->where('patronymic', $request->input('patronymic'))
+            ->first();
 
-//        $author = Author::create([
-//            'surname' =>  $request->input('surname'),
-//            'name' => $request->input('name'),
-//            'patronymic' => $request->input('patronymic'),
-//        ]);
-//
-//        $publisher = Publisher::create([
-//            'name' =>  $request->input('name'),
-//        ]);
-//
-//        $authorship = Authorship::create([
-//            'book_id' => $book->id,
-//            'author_id' => $author->id,
-//        ]);
-//
-//        $publication = Publication::create([
-//            'book_id' => $book->id,
-//            'publisher_id' => $publisher->id,
-//            'release_year' => $request->input('release_year'),
-//        ]);
+        if (!$author) {
+            $author = Author::create([
+                'surname' => $request->input('surname'),
+                'name' => $request->input('name'),
+                'patronymic' => $request->input('patronymic'),
+            ]);
+        }
+
+        $authorship = Authorship::create([
+            'id_books' => $book->id,
+            'id_authors' => $author->id,
+        ]);
+
+
+        $publisher = Publisher::where('publisher_name', $request->input('publisher_name'))
+            ->first();
+
+        if (!$publisher) {
+            $publisher = Publisher::create([
+                'publisher_name' =>  $request->input('publisher_name'),
+            ]);
+        }
+
+        $publication = Publication::create([
+            'id_books' => $book->id,
+            'id_publishers' => $publisher->id,
+            'release_year' => $request->input('release_year'),
+        ]);
 
 
     }
