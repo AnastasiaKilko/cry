@@ -31,14 +31,14 @@
                         </div>
                     </div>
                     <div class="network-icons">
-                        <img class="network-icon" src="img/icons/yt.png" alt="youtube">
-                        <img class="network-icon" src="img/icons/wa.png" alt="whatsapp">
-                        <img class="network-icon" src="img/icons/vk.png" alt="vkontakte">
-                        <img class="network-icon" src="img/icons/tg.png" alt="telegram">
+                        <img class="network-icon" src="{{ asset('img/icons/yt.png') }}" alt="youtube">
+                        <img class="network-icon" src="{{ asset('img/icons/wa.png') }}" alt="whatsapp">
+                        <img class="network-icon" src="{{ asset('img/icons/vk.png') }}" alt="vkontakte">
+                        <img class="network-icon" src="{{ asset('img/icons/tg.png') }}" alt="telegram">
                     </div>
                 </div>
                 <div class="footer-map">
-                    <img src="img/map.jpg" alt="map">
+                    <img src="{{ asset('img/map.jpg') }}" alt="map">
                 </div>
             </div>
         </div>

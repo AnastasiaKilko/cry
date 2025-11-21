@@ -23,7 +23,7 @@
     width: 12rem;
     font-size: 1rem;
 }
-.personal-data button:last-child {
+.personal-data button:first-child {
     background-color: var(--secondary-color);
     border-radius: 10px;
     border: 1px solid var(--accent-color1);

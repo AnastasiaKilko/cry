@@ -171,7 +171,7 @@
                 </article>
             </div>
 
-                <button class="yellow-btn">Напишите отзыв!</button>
+                <a class="yellow-btn" href="{{ route('reviewModalPage') }}">Напишите отзыв!</a>
 
 
         </section>

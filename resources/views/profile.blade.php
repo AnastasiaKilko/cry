@@ -21,7 +21,7 @@
                         <p>{{ $user->phone_number }}</p>
                         <p>{{ $user->email }}</p>
                     </div>
-                    <button onclick="document.location='change-personal-data-modal.html'" class="yellow-btn">Редактировать</button>
+                    <a class="yellow-btn" href="{{ route('changePersonalDataModal') }}">Редактировать</a>
                 </div>
             </div>
             <div class="profile-orders">

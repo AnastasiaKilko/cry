@@ -10,7 +10,7 @@
 <div class="wrapper">
     <header>
         <div class="header-block">
-            <a href={{ route('welcome') }}><img src="img/logo.png" alt="logo"></a>
+            <a href={{ route('welcome') }}><img src="{{ asset('img/logo.png') }}" alt="logo"></a>
             <div class="nav-and-search">
                 <nav>
                     <a href={{ route('catalogue') }}>Каталог</a>

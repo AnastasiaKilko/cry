@@ -21,7 +21,7 @@
                     <a><img src="img/button-icons/left.svg" alt="previous"></a>
                     <div class="book-slider">
                         <div class="book">
-                            <a class="book-cover" href="book-page.html">
+                            <a class="book-cover" href="{{ route('bookPage') }}">
                                 <img src="img/book1.jpg" alt="book-cover">
                                 <h4>А.С. Пушкин <br>Евгений Онегин</h4>
                             </a>

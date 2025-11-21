@@ -183,4 +183,7 @@
 .book-reviews .yellow-btn {
     align-self: end;
     width: 18rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

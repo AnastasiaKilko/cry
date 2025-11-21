@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,12 @@ Route::get('/book-page', function () {
 Route::get('/catalogue', function () {
     return view('catalogue');
 })->name('catalogue');
+
+Route::get('/change-profile', function () {
+    return view('changePersonalDataModal');
+})->name('changePersonalDataModal');
+
+Route::post('/change-profile', [UserController::class, 'register'])->name('register');
 
 //Route::get('/create-book', function () {
 //    return view('createBook');
@@ -63,6 +70,13 @@ Route::get('/register', function () {
 
 Route::post('/register', [UserController::class, 'register'])->name('register');
 
+Route::get('/write-review', function () {
+    return view('reviewModalPage');
+})->name('reviewModalPage');
+
+Route::get('/write-review', [ReviewController::class, 'index'])->name('reviewModalPage');
+
+Route::post('/write-review', [ReviewController::class, 'create'])->name('reviewModalPage');
 
 Route::get('/shopping-bag', function () {
     return view('shoppingBag');
