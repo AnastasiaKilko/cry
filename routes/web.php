@@ -18,6 +18,10 @@ Route::get('/404', function () {
     return view('error404');
 })->name('error404');
 
+Route::get('/admin', function () {
+    return view('adminPanel');
+})->name('adminPanel');
+
 Route::get('/about-us', function () {
     return view('aboutUs');
 })->name('aboutUs');

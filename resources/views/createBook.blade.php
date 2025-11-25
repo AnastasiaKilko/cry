@@ -8,8 +8,9 @@
 </head>
 <body>
 <div class="wrapper">
-    @include('header')
+    @include('adminPanel')
     <main>
+
         <section class="login-register">
             <h2>Новая книга</h2>
             <form action="{{route('createBook')}}" method="post">

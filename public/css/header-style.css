@@ -1,9 +1,9 @@
-header {
+.user-header {
     margin: 0 auto;
     height: 5rem;
     width: 100%;
 }
-header .header-block {
+.user-header .header-block {
     margin: 0.5% auto;
     width: 90%;
     height: 80%;
@@ -11,11 +11,11 @@ header .header-block {
     justify-content: space-between;
     align-items: center;
 }
-header .header-block img {
+.user-header .header-block img {
     height: 4rem;
     cursor: pointer;
 }
-header .nav-and-search {
+.user-header .nav-and-search {
     display: flex;
     flex-basis: 70vw;
     flex-direction: column;
@@ -23,60 +23,60 @@ header .nav-and-search {
     align-items: center;
     height: 90%;
 }
-header nav {
+.user-header nav {
     display: flex;
     justify-content: space-between;
     width: 80%;
     align-items: center;
 }
-header nav a {
+.user-header nav a {
     text-decoration: none;
     color: var(--text-color);
     cursor: pointer;
 }
-header nav a:hover {
+.user-header nav a:hover {
     color: rgba(90, 130, 127, .9);
 }
-header .search-line {
+.user-header .search-line {
     display: flex;
     justify-content: space-between;
     width: 80%;
 }
-header .search-line input {
+.user-header .search-line input {
     outline: none;
     border: none;
     border-bottom: 1px solid var(--bg-color);
     width: 50vw;
 }
-header .search-line img {
+.user-header .search-line img {
     cursor: pointer;
     height: 1.5rem;
 }
-header .search-line img:hover {
+.user-header .search-line img:hover {
     opacity: 0.8;
 }
-header .icons {
+.user-header .icons {
     display: flex;
     align-items: flex-end;
     gap: 2rem;
 }
-header .icons img{
+.user-header .icons img{
     height: 30px;
     width: 30px;
     transition: 200ms;
 }
 
-header .icons p {
+.user-header .icons p {
     font-size: var(--text-size-small);
     color: var(--text-color);
 }
 
-header .logout-button p {
+.user-header .logout-button p {
     font-size: var(--text-size-small);
     color: var(--text-color);
 }
 
-header .icons .icon {
+.user-header .icons .icon {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -84,15 +84,36 @@ header .icons .icon {
     gap: 0.5rem;
     transition: 200ms;
 }
-header .icons .icon:hover p {
+.user-header .icons .icon:hover p {
     color: rgba(245, 196, 93, .9);
 }
-header .icons .icon:hover img {
+.user-header .icons .icon:hover img {
     filter: drop-shadow(0 0 3px rgba(245, 196, 93, .9));
 }
 
-header .button {
+.user-header .button {
     border: none;
     outline: none;
 }
 
+.admin-header {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    padding-left: 2vw;
+}
+.admin-header img {
+    height: 8vh;
+}
+.admin-header h3 {
+    color: var(--accent-color2);
+
+}
+
+.admin-header nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
