@@ -94,7 +94,6 @@
             </form>
         </section>
     </main>
-    @include('footer')
 </div>
 </body>
 </html>

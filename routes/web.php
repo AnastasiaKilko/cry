@@ -1,10 +1,18 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
+use App\Livewire\Counter;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
+
+Route::controller(AuthController::class)->group(function () {
+    Route::post('/login', 'login')->name('login');
+    Route::post('/register', 'register')->name('register');
+    Route::post('/logout', 'logout')->name('logout')->middleware('auth');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -40,12 +48,7 @@ Route::get('/change-profile', function () {
 
 Route::post('/change-profile', [UserController::class, 'register'])->name('register');
 
-//Route::get('/create-book', function () {
-//    return view('createBook');
-//})->name('createBook');
-
 Route::get('/create-book', [BookController::class, 'index'])->name('createBook');
-
 Route::post('/create-book', [BookController::class, 'create'])->name('createBook');
 
 Route::get('/e-book-reader', function () {
@@ -64,7 +67,7 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::post('/login', [UserController::class, 'login'])->name('login');
+
 
 Route::get('/profile/{id}', [UserController::class, 'profile'])->name('profile');
 
@@ -72,14 +75,11 @@ Route::get('/register', function () {
     return view('register');
 })->name('register');
 
-Route::post('/register', [UserController::class, 'register'])->name('register');
-
 Route::get('/write-review', function () {
     return view('reviewModalPage');
 })->name('reviewModalPage');
 
 Route::get('/write-review', [ReviewController::class, 'index'])->name('reviewModalPage');
-
 Route::post('/write-review', [ReviewController::class, 'create'])->name('reviewModalPage');
 
 Route::get('/shopping-bag', function () {
@@ -89,7 +89,3 @@ Route::get('/shopping-bag', function () {
 Route::get('/special-offers', function () {
     return view('specialOffers');
 })->name('specialOffers');
-
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
-
-Route::get('/logout', [UserController::class, 'logout1'])->name('logout');

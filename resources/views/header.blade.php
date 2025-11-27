@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <header class="user-header">
+    <header>
         <div class="header-block">
             <a href={{ route('welcome') }}><img src="{{ asset('img/logo.png') }}" alt="logo"></a>
             <div class="nav-and-search">

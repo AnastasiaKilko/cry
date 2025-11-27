@@ -1,9 +1,9 @@
-.user-header {
+header {
     margin: 0 auto;
     height: 5rem;
     width: 100%;
 }
-.user-header .header-block {
+header .header-block {
     margin: 0.5% auto;
     width: 90%;
     height: 80%;
@@ -11,11 +11,11 @@
     justify-content: space-between;
     align-items: center;
 }
-.user-header .header-block img {
+header .header-block img {
     height: 4rem;
     cursor: pointer;
 }
-.user-header .nav-and-search {
+header .nav-and-search {
     display: flex;
     flex-basis: 70vw;
     flex-direction: column;
@@ -23,60 +23,60 @@
     align-items: center;
     height: 90%;
 }
-.user-header nav {
+header nav {
     display: flex;
     justify-content: space-between;
     width: 80%;
     align-items: center;
 }
-.user-header nav a {
+header nav a {
     text-decoration: none;
     color: var(--text-color);
     cursor: pointer;
 }
-.user-header nav a:hover {
+header nav a:hover {
     color: rgba(90, 130, 127, .9);
 }
-.user-header .search-line {
+header .search-line {
     display: flex;
     justify-content: space-between;
     width: 80%;
 }
-.user-header .search-line input {
+header .search-line input {
     outline: none;
     border: none;
     border-bottom: 1px solid var(--bg-color);
     width: 50vw;
 }
-.user-header .search-line img {
+header .search-line img {
     cursor: pointer;
     height: 1.5rem;
 }
-.user-header .search-line img:hover {
+header .search-line img:hover {
     opacity: 0.8;
 }
-.user-header .icons {
+header .icons {
     display: flex;
     align-items: flex-end;
     gap: 2rem;
 }
-.user-header .icons img{
+header .icons img{
     height: 30px;
     width: 30px;
     transition: 200ms;
 }
 
-.user-header .icons p {
+header .icons p {
     font-size: var(--text-size-small);
     color: var(--text-color);
 }
 
-.user-header .logout-button p {
+header .logout-button p {
     font-size: var(--text-size-small);
     color: var(--text-color);
 }
 
-.user-header .icons .icon {
+header .icons .icon {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -84,14 +84,14 @@
     gap: 0.5rem;
     transition: 200ms;
 }
-.user-header .icons .icon:hover p {
+header .icons .icon:hover p {
     color: rgba(245, 196, 93, .9);
 }
-.user-header .icons .icon:hover img {
+header .icons .icon:hover img {
     filter: drop-shadow(0 0 3px rgba(245, 196, 93, .9));
 }
 
-.user-header .button {
+header .button {
     border: none;
     outline: none;
 }
