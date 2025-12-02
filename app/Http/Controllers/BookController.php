@@ -79,9 +79,9 @@ class BookController extends Controller
         ]);
     }
 
-    public function moew() {
-        $book = Book::all();
-        return view('moew', compact('book'));
+    public function catalog() {
+        $book = Book::all()->where('id_book_types', 2);
+        return view('catalog', compact('book'));
     }
 
 

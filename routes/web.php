@@ -92,5 +92,5 @@ Route::get('/special-offers', function () {
 })->name('specialOffers');
 
 Route::controller(BookController::class)->group(function () {
-    Route::get('/moew', 'moew')->name('moew');
+    Route::get('/catalog', 'catalog')->name('catalog');
 });
