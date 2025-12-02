@@ -10,9 +10,34 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'login')->name('login');
-    Route::post('/register', 'register')->name('register');
     Route::post('/logout', 'logout')->name('logout')->middleware('auth');
+    Route::post('/register', 'register')->name('register');
 });
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+Route::get('/register', function () {
+    return view('register');
+})->name('register');
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/profile/{id}', 'profile')->name('profile');
+    Route::post('/change-profile', 'register')->name('register'); //FIX IT
+});
+Route::get('/change-profile', function () {
+    return view('changePersonalDataModal');
+})->name('changePersonalDataModal');
+
+Route::controller(BookController::class)->group(function () {
+    Route::get('/create-book', 'index')->name('createBook');
+    Route::post('/create-book', 'create')->name('createBook');
+});
+
+Route::controller(ReviewController::class)->group(function () { //FIX IT
+    Route::get('/write-review', 'index')->name('reviewModalPage');
+    Route::post('/write-review', 'create')->name('reviewModalPage');
+});
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,15 +67,6 @@ Route::get('/catalogue', function () {
     return view('catalogue');
 })->name('catalogue');
 
-Route::get('/change-profile', function () {
-    return view('changePersonalDataModal');
-})->name('changePersonalDataModal');
-
-Route::post('/change-profile', [UserController::class, 'register'])->name('register');
-
-Route::get('/create-book', [BookController::class, 'index'])->name('createBook');
-Route::post('/create-book', [BookController::class, 'create'])->name('createBook');
-
 Route::get('/e-book-reader', function () {
     return view('eBookReader');
 })->name('eBookReader');
@@ -63,24 +79,9 @@ Route::get('/favourites', function () {
     return view('favourites');
 })->name('favourites');
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
-
-
-
-Route::get('/profile/{id}', [UserController::class, 'profile'])->name('profile');
-
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
-
 Route::get('/write-review', function () {
     return view('reviewModalPage');
 })->name('reviewModalPage');
-
-Route::get('/write-review', [ReviewController::class, 'index'])->name('reviewModalPage');
-Route::post('/write-review', [ReviewController::class, 'create'])->name('reviewModalPage');
 
 Route::get('/shopping-bag', function () {
     return view('shoppingBag');
@@ -89,3 +90,7 @@ Route::get('/shopping-bag', function () {
 Route::get('/special-offers', function () {
     return view('specialOffers');
 })->name('specialOffers');
+
+Route::controller(BookController::class)->group(function () {
+    Route::get('/moew', 'moew')->name('moew');
+});

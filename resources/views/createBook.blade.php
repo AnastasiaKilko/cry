@@ -10,15 +10,16 @@
 <div class="wrapper">
     @include('adminPanel')
     <main>
-
         <section class="login-register">
             <h2>Новая книга</h2>
-            <form action="{{route('createBook')}}" method="post">
+            <form action="{{route('createBook')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <fieldset class="register">
                     <legend>Информация о книге</legend><br><br>
-                    <label for="name">Введите название книги</label><br>
-                    <input type="text" id="name" name="name"><br><br>
+                    <label for="cover_image">Выбирете обложку книги</label><br>
+                    <input type="file" id="cover_image" name="cover_image"><br><br>
+                    <label for="title">Введите название книги</label><br>
+                    <input type="text" id="title" name="title"><br><br>
                     <label for="ISBN">Введите ISBN</label><br>
                     <input type="text" id="ISBN" placeholder="000-0-00000-000-0" name="ISBN"><br><br>
                     <label for="id_age_limit">Выберите возрастное ограничение</label><br>

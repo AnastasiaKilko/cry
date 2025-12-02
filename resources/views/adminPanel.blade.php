@@ -16,6 +16,12 @@
                 <a href="#">Управление заказами</a>
                 <a href="#">Помощь</a>
             </nav>
+            <div class="search-line">
+                <form>
+                    <input type="text" name="search" placeholder="Введите текст...">
+                </form>
+                <img src="{{ asset('img/icons/search.svg') }}" alt="search">
+            </div>
         </div>
         <div class="icons">
             @if (!Auth::check())

@@ -10,6 +10,7 @@ use App\Models\BooksType;
 use App\Models\Publication;
 use App\Models\Publisher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
@@ -23,9 +24,12 @@ class BookController extends Controller
 
     public function create(Request $request) {
 
+        $path = $request->file('cover_image')->store('cover_images', 'public');
+        $url = Storage::url($path);
 
         $book = Book::create([
-            'name' =>  $request->input('name'),
+            'cover_image' => $url,
+            'title' =>  $request->input('title'),
             'ISBN' => $request->input('ISBN'),
             'id_age_limit' => $request->input('id_age_limit'),
             'id_book_types' => $request->input('id_book_types'),
@@ -53,7 +57,7 @@ class BookController extends Controller
             ]);
         }
 
-        $authorship = Authorship::create([
+        Authorship::create([
             'id_books' => $book->id,
             'id_authors' => $author->id,
         ]);
@@ -68,12 +72,17 @@ class BookController extends Controller
             ]);
         }
 
-        $publication = Publication::create([
+        Publication::create([
             'id_books' => $book->id,
             'id_publishers' => $publisher->id,
             'release_year' => $request->input('release_year'),
         ]);
-
-
     }
+
+    public function moew() {
+        $book = Book::all();
+        return view('moew', compact('book'));
+    }
+
+
 }
