@@ -16,11 +16,11 @@ class Authorship extends Model
 
     public function book()
     {
-        return $this->belongsTo(Book::class);
+        return $this->belongsTo(Book::class, 'id_books', 'id');
     }
     public function author()
     {
-        return $this->belongsTo(Author::class);
+        return $this->belongsTo(Author::class, 'id_authors', 'id');
     }
 
 }

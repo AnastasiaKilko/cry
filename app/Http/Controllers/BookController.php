@@ -80,8 +80,18 @@ class BookController extends Controller
     }
 
     public function catalog() {
-        $book = Book::all()->where('id_book_types', 2);
-        return view('catalog', compact('book'));
+        $authorship = Authorship::with(['book' => function($q) {
+            $q->select('id', 'cover_image', 'title', 'price')
+            ->where('id_book_types', 2);
+        }, 'author' => function($q) {
+            $q->select('id', 'surname', 'name');
+        }])
+            ->whereHas('book', function($query) {
+                $query->where('id_book_types', 2);
+            })
+            ->get();
+
+        return view('catalog', compact('authorship'));
     }
 
 

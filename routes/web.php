@@ -31,6 +31,7 @@ Route::get('/change-profile', function () {
 Route::controller(BookController::class)->group(function () {
     Route::get('/create-book', 'index')->name('createBook');
     Route::post('/create-book', 'create')->name('createBook');
+    Route::get('/catalogue', 'catalog')->name('catalogue');
 });
 
 Route::controller(ReviewController::class)->group(function () { //FIX IT
@@ -62,10 +63,6 @@ Route::get('/about-us', function () {
 Route::get('/book-page', function () {
     return view('bookPage');
 })->name('bookPage');
-
-Route::get('/catalogue', function () {
-    return view('catalogue');
-})->name('catalogue');
 
 Route::get('/e-book-reader', function () {
     return view('eBookReader');
