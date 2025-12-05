@@ -24,6 +24,7 @@ class Book extends Model
         'file_format',
         'price',
         'e_book_link',
+        'summary',
     ];
     public function booksType()
     {

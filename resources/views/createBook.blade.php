@@ -74,7 +74,7 @@
                     <input type="text" id="surname" placeholder="Иванов" name="surname"><br><br>
                     <label for="name">Введите имя автора</label><br>
                     <input type="text" id="name" placeholder="Иван" name="name"><br><br>
-                    <label for="patronymic">Введите отчество автора</label><br>
+                    <label for="patronymic">Введите отчество или второе имя автора</label><br>
                     <input type="text" id="patronymic" placeholder="Иванович" name="patronymic"><br><br>
                 </fieldset>
 
@@ -88,6 +88,12 @@
                     <legend>Информация об издании</legend><br><br>
                     <label for="release_year">Введите год издательства</label><br>
                     <input type="text" id="release_year" placeholder="2020" name="release_year"><br><br>
+                </fieldset>
+
+                <fieldset class="register">
+                    <legend>Описание книги</legend><br><br>
+                    <label for="summary">Добавьте описание книги</label><br>
+                    <textarea id="summary" maxlength="1000" placeholder="Введите текст..." name="summary"></textarea>
                 </fieldset>
 
                 <button class="yellow-btn" type="submit">Сохранить</button>

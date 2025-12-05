@@ -32,6 +32,7 @@ Route::controller(BookController::class)->group(function () {
     Route::get('/create-book', 'index')->name('createBook');
     Route::post('/create-book', 'create')->name('createBook');
     Route::get('/catalogue', 'catalog')->name('catalogue');
+    Route::get('/book-page/{id}', 'bookPage')->name('bookPage');
 });
 
 Route::controller(ReviewController::class)->group(function () { //FIX IT
@@ -59,10 +60,6 @@ Route::get('/admin', function () {
 Route::get('/about-us', function () {
     return view('aboutUs');
 })->name('aboutUs');
-
-Route::get('/book-page', function () {
-    return view('bookPage');
-})->name('bookPage');
 
 Route::get('/e-book-reader', function () {
     return view('eBookReader');

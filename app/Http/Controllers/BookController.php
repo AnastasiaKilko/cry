@@ -42,6 +42,7 @@ class BookController extends Controller
             'file_format' => $request->input('file_format'),
             'price' => $request->input('price'),
             'e_book_link' => $request->input('e_book_link'),
+            'summary' => $request->input('summary'),
         ]);
 
         $author = Author::where('surname', $request->input('surname'))
@@ -77,6 +78,8 @@ class BookController extends Controller
             'id_publishers' => $publisher->id,
             'release_year' => $request->input('release_year'),
         ]);
+        return redirect('/book-page/{id}');
+//        НАДО УТОЧНИТЬ КАК РЕДИРЕКТНУТЬ НА ТОЛЬКО ЧТО СОЗДАННУЮ КНИГУ
     }
 
     public function catalog() {
@@ -98,7 +101,7 @@ class BookController extends Controller
     {
         $authorship = Authorship::with(['book' => function($q) {
             $q->select('id', 'cover_image', 'title', 'ISBN', 'id_age_limit', 'id_book_types', 'pages', 'size',
-                'book_cover','copies', 'weight', 'filesize', 'file_format', 'price')
+                'book_cover','copies', 'weight', 'filesize', 'file_format', 'price', 'summary')
                 ->with(['ageLimit', 'booksType']);
         }, 'author' => function($q) {
             $q->select('id', 'surname', 'name', 'patronymic');
@@ -109,7 +112,7 @@ class BookController extends Controller
 
         $publication = Publication::with(['book' => function($q) {
             $q->select('id', 'cover_image', 'title', 'ISBN', 'id_age_limit', 'id_book_types', 'pages', 'size',
-                'book_cover','copies', 'weight', 'filesize', 'file_format', 'price')
+                'book_cover','copies', 'weight', 'filesize', 'file_format', 'price', 'summary')
                 ->with(['ageLimit', 'booksType']);
         }, 'publisher' => function($q) {
             $q->select('id', 'publisher_name');
@@ -118,6 +121,6 @@ class BookController extends Controller
             ->get();
 
 
-        return view('/catalog', compact('authorship', 'publication'));
+        return view('/bookPage', compact('authorship', 'publication'));
     }
 }

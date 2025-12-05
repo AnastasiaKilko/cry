@@ -10,7 +10,8 @@ class BooksType extends Model
     protected $table = 'book_types';
 
     protected $fillable = [
-        'type'
+        'type',
+        'type_img',
     ];
     public function book()
     {

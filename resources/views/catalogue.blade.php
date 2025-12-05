@@ -23,7 +23,7 @@
                     <div class="book-slider">
                         @foreach($authorship as $catalog)
                             <div class="book">
-                                <a class="book-cover" href="{{ route('catalog', ['id' => $catalog->book->id]) }}"> //ИСПРАВИТЬ ПОТОМ 'catalog' НА 'bookPage'
+                                <a class="book-cover" href="{{ route('bookPage', ['id' => $catalog->book->id]) }}">
                                     <img src="{{ asset('storage/cover_images/' . basename($catalog->book->cover_image)) }}"
                                          alt="нет обложки">
                                     <h4>{{ $catalog->author->name }} {{ $catalog->author->surname }}

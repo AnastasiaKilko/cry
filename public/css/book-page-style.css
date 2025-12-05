@@ -36,44 +36,12 @@
 }
 .book-info-main-interaction-variables {
     display: flex;
-    width: 70%;
+    flex-direction: column;
+    width: 10rem;
+    height: 25%;
     justify-content: space-between;
-}
-.paper-book {
-    display: flex;
-    flex-direction: column;
-    gap: 2%;
-    justify-content: center;
     align-items: center;
-    padding: 5px;  
 }
-.paper-book:hover {
-    cursor: pointer;
-    background-color: rgba(245, 196, 93, .5);
-    border-radius: 10px;
-}
-.paper-book:active {
-    background-color: rgba(245, 196, 93, .7);
-    border-radius: 10px;
-}
-.e-book {
-    display: flex;
-    flex-direction: column;
-    gap: 2%;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-.e-book:hover {
-    cursor: pointer;
-    background-color: rgba(245, 196, 93, .5);
-    border-radius: 10px;
-}
-.e-book:active {
-    background-color: rgba(245, 196, 93, .7);
-    border-radius: 10px;
-} 
-/*когда вариант книги не выбран, кнопки "В корзину" и "В избранное" - недоступны*/
 .book-info-main-interaction img {
     height: 3rem;
 }
