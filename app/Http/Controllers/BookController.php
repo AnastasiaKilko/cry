@@ -91,8 +91,33 @@ class BookController extends Controller
             })
             ->get();
 
-        return view('catalog', compact('authorship'));
+        return view('catalogue', compact('authorship'));
     }
 
+    public function bookPage($id)
+    {
+        $authorship = Authorship::with(['book' => function($q) {
+            $q->select('id', 'cover_image', 'title', 'ISBN', 'id_age_limit', 'id_book_types', 'pages', 'size',
+                'book_cover','copies', 'weight', 'filesize', 'file_format', 'price')
+                ->with(['ageLimit', 'booksType']);
+        }, 'author' => function($q) {
+            $q->select('id', 'surname', 'name', 'patronymic');
+        }])
+            ->where('id_books', $id)
+            ->get();
 
+
+        $publication = Publication::with(['book' => function($q) {
+            $q->select('id', 'cover_image', 'title', 'ISBN', 'id_age_limit', 'id_book_types', 'pages', 'size',
+                'book_cover','copies', 'weight', 'filesize', 'file_format', 'price')
+                ->with(['ageLimit', 'booksType']);
+        }, 'publisher' => function($q) {
+            $q->select('id', 'publisher_name');
+        }])
+            ->where('id_books', $id)
+            ->get();
+
+
+        return view('/catalog', compact('authorship', 'publication'));
+    }
 }

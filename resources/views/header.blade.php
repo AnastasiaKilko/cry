@@ -19,7 +19,6 @@
                     <a href={{ route('aboutUs') }}>Доставка</a>
                     <a href={{ route('specialOffers') }}>Акции</a>
                     <a href={{ route('eBookReader') }}>Читалка</a>
-                    <a href={{ route('catalog') }}>moew</a>
                 </nav>
                 <div class="search-line">
                     <form>

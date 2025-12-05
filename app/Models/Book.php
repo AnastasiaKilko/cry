@@ -27,11 +27,11 @@ class Book extends Model
     ];
     public function booksType()
     {
-        return $this->belongsTo(BooksType::class);
+        return $this->belongsTo(BooksType::class, 'id_book_types');
     }
     public function ageLimit()
     {
-        return $this->belongsTo(AgeLimit::class);
+        return $this->belongsTo(AgeLimit::class, 'id_age_limit');
     }
     public function authorship()
     {

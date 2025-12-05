@@ -19,6 +19,6 @@ class Publication extends Model
     }
     public function publisher()
     {
-        return $this->belongsTo(Publisher::class);
+        return $this->belongsTo(Publisher::class, 'id_publishers');
     }
 }
