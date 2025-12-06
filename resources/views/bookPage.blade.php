@@ -79,15 +79,13 @@
 
                     <div class="book-info-main-interaction">
                         <div class="book-info-main-interaction-variables">
-                            {{--                        НАДО СДЕЛАТЬ ТАК, ТОЛЬКО КОГДА ПОПРАВЛЮ ТАБЛИЦУ БД BOOKSTYPE
-                                                        <img src="{{ asset('storage/ЧТО-ТО ТАМ/' . basename($catalog->book->booksType->type_img) }}"
-                                             alt="нет иконки">
-                                                        --}}
-                            @if($catalog->book->booksType->type == 'Бумажная книга')
-                                <img src="{{ asset('img/icons/paper-book.svg') }}" alt="paper book">
-                            @else
-                                <img src="{{ asset('img/icons/e-book.svg') }}" alt="e-book">
-                            @endif
+                            <img src="{{ asset('storage/icons/' . basename($catalog->book->booksType->type_img)) }}" alt="нет иконки">
+
+                            {{--                            @if($catalog->book->booksType->type == 'Бумажная книга')--}}
+                            {{--                                <img src="{{ asset('img/icons/paper-book.svg') }}" alt="paper book">--}}
+                            {{--                            @else--}}
+                            {{--                                <img src="{{ asset('img/icons/e-book.svg') }}" alt="e-book">--}}
+                            {{--                            @endif--}}
                             <h5>{{ number_format($catalog->book->price) }} ₽</h5>
 
                         </div>
@@ -102,8 +100,6 @@
                 </article>
             @endforeach
         </section>
-
-
 
         <section class="book-reviews">
             <h3>Отзывы</h3>
@@ -181,12 +177,13 @@
                                 <p class="checked-star">★</p>
                             </div>
                         </div>
-                        <p>Шикарное издание просто пушка! Мне так нравится, так нравится, не могу сдерждать слёз! Книга - восторг! Ваш магазин - восторг! Была бы моя воля, поставила бы 100 звёзд!</p>
+                        <p>Шикарное издание просто пушка! Мне так нравится, так нравится, не могу сдерждать слёз! Книга
+                            - восторг! Ваш магазин - восторг! Была бы моя воля, поставила бы 100 звёзд!</p>
                     </div>
                 </article>
             </div>
 
-                <a class="yellow-btn" href="{{ route('reviewModalPage') }}">Напишите отзыв!</a>
+            <a class="yellow-btn" href="{{ route('reviewModalPage') }}">Напишите отзыв!</a>
 
 
         </section>

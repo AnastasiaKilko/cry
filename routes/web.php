@@ -4,7 +4,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
-use App\Livewire\Counter;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +31,7 @@ Route::controller(BookController::class)->group(function () {
     Route::get('/create-book', 'index')->name('createBook');
     Route::post('/create-book', 'create')->name('createBook');
     Route::get('/catalogue', 'catalog')->name('catalogue');
+    Route::get('/e-catalogue', 'eCatalog')->name('eCatalogue');
     Route::get('/book-page/{id}', 'bookPage')->name('bookPage');
 });
 
@@ -64,10 +64,6 @@ Route::get('/about-us', function () {
 Route::get('/e-book-reader', function () {
     return view('eBookReader');
 })->name('eBookReader');
-
-Route::get('/e-catalogue', function () {
-    return view('eCatalogue');
-})->name('eCatalogue');
 
 Route::get('/favourites', function () {
     return view('favourites');

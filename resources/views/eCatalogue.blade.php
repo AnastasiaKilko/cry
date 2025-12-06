@@ -20,147 +20,25 @@
                 <div class="books">
                     <a><img src="img/button-icons/left.svg" alt="previous"></a>
                     <div class="book-slider">
-                        <div class="book">
-                            <a class="book-cover" href="{{ route('bookPage') }}">
-                                <img src="img/book1.jpg" alt="book-cover">
-                                <h4>А.С. Пушкин <br>Евгений Онегин</h4>
-                            </a>
-                            <h5>350 ₽</h5>
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
+                        @foreach($authorship as $eCatalog)
+                            <div class="book">
+                                <a class="book-cover" href="{{ route('bookPage', ['id' => $eCatalog->book->id]) }}">
+                                    <img src="{{ asset('storage/cover_images/' . basename($eCatalog->book->cover_image)) }}"
+                                         alt="нет обложки">
+                                    <h4>{{ $eCatalog->author->name }} {{ $eCatalog->author->surname }}
+                                        <br> {{ $eCatalog->book->title }}</h4>
+                                </a>
+                                <h5>{{ number_format($eCatalog->book->price) }} ₽</h5>
+                                <div class="book-order-btns">
+                                    <button class="to-bag-btn">В корзину</button>
+                                    <button class="heart-btn">
+                                        <img src="img/icons/heart-sm.svg" alt="fav">
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book2.jpg" alt="book-cover">
-                                <h4>Дж.К. Роулинг <br>Гарри Поттер и дары смерти</h4>
-                            </div>
-                            <h5>680 ₽</h5>
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book3.jpg" alt="book-cover">
-                                <h4>С. Моэм <br>Театр</h4>
-                            </div>
-                            <h5>320 ₽</h5>
-
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book4.jpg" alt="book-cover">
-                                <h4>О. Уальд <br>Портрет Дориана Грея</h4>
-                            </div>
-                            <h5>390 ₽</h5>
-
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book5.jpg" alt="book-cover">
-                                <h4>М.А. Булгаков <br>Мастер и Маргарита</h4>
-                            </div>
-                            <h5>480 ₽</h5>
-
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book6.jpg" alt="book-cover">
-                                <h4>Мосян Тунсю <br>Благословение небожителей</h4>
-                            </div>
-                            <h5>750 ₽</h5>
-
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book7.jpg" alt="book-cover">
-                                <h4>Ж.П. Сартр <br>Тошнота</h4>
-                            </div>
-                            <h5>250 ₽</h5>
-
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book8.jpg" alt="book-cover">
-                                <h4>Л.Н. Толстой <br>Анна Каренина</h4>
-                            </div>
-                            <h5>320 ₽</h5>
-
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book9.jpg" alt="book-cover">
-                                <h4>Н. Сакавич <br>Лисья Нора</h4>
-                            </div>
-                            <h5>390 ₽</h5>
-
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
-                        <article class="book">
-                            <div class="book-cover">
-                                <img src="img/book10.jpg" alt="book-cover">
-                                <h4>Н. Гейман <br>Коралина</h4>
-                            </div>
-                            <h5>380 ₽</h5>
-
-                            <div class="book-order-btns">
-                                <button class="to-bag-btn">В корзину</button>
-                                <button class="heart-btn">
-                                    <img src="img/icons/heart-sm.svg" alt="fav">
-                                </button>
-                            </div>
-                        </article>
+                        @endforeach
                     </div>
                     <a><img src="img/button-icons/right.svg" alt="next"></a>
-
                 </div>
                 <div class="pagination">
                     <div class="inactive-circle"></div>

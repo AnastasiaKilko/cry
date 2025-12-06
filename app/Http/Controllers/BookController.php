@@ -78,7 +78,7 @@ class BookController extends Controller
             'id_publishers' => $publisher->id,
             'release_year' => $request->input('release_year'),
         ]);
-        return redirect('/book-page/{id}');
+//        return redirect('/book-page/{id}');
 //        НАДО УТОЧНИТЬ КАК РЕДИРЕКТНУТЬ НА ТОЛЬКО ЧТО СОЗДАННУЮ КНИГУ
     }
 
@@ -95,6 +95,21 @@ class BookController extends Controller
             ->get();
 
         return view('catalogue', compact('authorship'));
+    }
+
+    public function eCatalog() {
+        $authorship = Authorship::with(['book' => function($q) {
+            $q->select('id', 'cover_image', 'title', 'price')
+                ->where('id_book_types', 3);
+        }, 'author' => function($q) {
+            $q->select('id', 'surname', 'name');
+        }])
+            ->whereHas('book', function($query) {
+                $query->where('id_book_types', 3);
+            })
+            ->get();
+
+        return view('eCatalogue', compact('authorship'));
     }
 
     public function bookPage($id)
@@ -123,4 +138,17 @@ class BookController extends Controller
 
         return view('/bookPage', compact('authorship', 'publication'));
     }
+
+    public function bookType(Request $request)
+    {
+        $path = $request->file('type_img')->store('icons', 'public');
+        $url = Storage::url($path);
+
+        BooksType::create([
+            'type' => $request->input('type'),
+            'type_img' => $url,
+        ]);
+    }
+
+
 }
