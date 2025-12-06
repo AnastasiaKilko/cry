@@ -80,17 +80,14 @@
                     <div class="book-info-main-interaction">
                         <div class="book-info-main-interaction-variables">
                             <img src="{{ asset('storage/icons/' . basename($catalog->book->booksType->type_img)) }}" alt="нет иконки">
-
-                            {{--                            @if($catalog->book->booksType->type == 'Бумажная книга')--}}
-                            {{--                                <img src="{{ asset('img/icons/paper-book.svg') }}" alt="paper book">--}}
-                            {{--                            @else--}}
-                            {{--                                <img src="{{ asset('img/icons/e-book.svg') }}" alt="e-book">--}}
-                            {{--                            @endif--}}
                             <h5>{{ number_format($catalog->book->price) }} ₽</h5>
 
                         </div>
                         <button class="to-bag-btn">В корзину</button>
-                        <button class="to-fav-btn">В избранное</button>
+                        <form action="{{route('fav', ['id' => $catalog->id])}}" method="post">
+                            @csrf
+                            <button class="to-fav-btn">В избранное</button>
+                        </form>
                     </div>
                 </article>
 

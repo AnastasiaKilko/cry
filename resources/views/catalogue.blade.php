@@ -32,88 +32,15 @@
                                 <h5>{{ number_format($catalog->book->price) }} ₽</h5>
                                 <div class="book-order-btns">
                                     <button class="to-bag-btn">В корзину</button>
-                                    <button class="heart-btn">
-                                        <img src="img/icons/heart-sm.svg" alt="fav">
-                                    </button>
+                                    <form action="{{route('fav', ['id' => $catalog->id])}}" method="post">
+                                        @csrf
+                                        <button class="heart-btn">
+                                            <img src="img/icons/heart-sm.svg" alt="fav">
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach
-
-
-
-
-
-
-                        {{--                                <article class="book">--}}
-                        {{--                                    <div class="book-cover">--}}
-                        {{--                                        <img src="img/book6.jpg" alt="book-cover">--}}
-                        {{--                                        <h4>Мосян Тунсю <br>Благословение небожителей</h4>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <h5>1250 ₽</h5>--}}
-
-                        {{--                                    <div class="book-order-btns">--}}
-                        {{--                                        <button class="to-bag-btn">В корзину</button>--}}
-                        {{--                                        <button class="heart-btn">--}}
-                        {{--                                            <img src="img/icons/heart-sm.svg" alt="fav">--}}
-                        {{--                                        </button>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </article>--}}
-                        {{--                                <article class="book">--}}
-                        {{--                                    <div class="book-cover">--}}
-                        {{--                                        <img src="img/book7.jpg" alt="book-cover">--}}
-                        {{--                                        <h4>Ж.П. Сартр <br>Тошнота</h4>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <h5>750 ₽</h5>--}}
-
-                        {{--                                    <div class="book-order-btns">--}}
-                        {{--                                        <button class="to-bag-btn">В корзину</button>--}}
-                        {{--                                        <button class="heart-btn">--}}
-                        {{--                                            <img src="img/icons/heart-sm.svg" alt="fav">--}}
-                        {{--                                        </button>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </article>--}}
-                        {{--                                <article class="book">--}}
-                        {{--                                    <div class="book-cover">--}}
-                        {{--                                        <img src="img/book8.jpg" alt="book-cover">--}}
-                        {{--                                        <h4>Л.Н. Толстой <br>Анна Каренина</h4>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <h5>620 ₽</h5>--}}
-
-                        {{--                                    <div class="book-order-btns">--}}
-                        {{--                                        <button class="to-bag-btn">В корзину</button>--}}
-                        {{--                                        <button class="heart-btn">--}}
-                        {{--                                            <img src="img/icons/heart-sm.svg" alt="fav">--}}
-                        {{--                                        </button>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </article>--}}
-                        {{--                                <article class="book">--}}
-                        {{--                                    <div class="book-cover">--}}
-                        {{--                                        <img src="img/book9.jpg" alt="book-cover">--}}
-                        {{--                                        <h4>Н. Сакавич <br>Лисья Нора</h4>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <h5>890 ₽</h5>--}}
-
-                        {{--                                    <div class="book-order-btns">--}}
-                        {{--                                        <button class="to-bag-btn">В корзину</button>--}}
-                        {{--                                        <button class="heart-btn">--}}
-                        {{--                                            <img src="img/icons/heart-sm.svg" alt="fav">--}}
-                        {{--                                        </button>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </article>--}}
-                        {{--                                <article class="book">--}}
-                        {{--                                    <div class="book-cover">--}}
-                        {{--                                        <img src="img/book10.jpg" alt="book-cover">--}}
-                        {{--                                        <h4>Н. Гейман <br>Коралина</h4>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <h5>780 ₽</h5>--}}
-
-                        {{--                                    <div class="book-order-btns">--}}
-                        {{--                                        <button class="to-bag-btn">В корзину</button>--}}
-                        {{--                                        <button class="heart-btn">--}}
-                        {{--                                            <img src="img/icons/heart-sm.svg" alt="fav">--}}
-                        {{--                                        </button>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </article>--}}
                     </div>
                     <a><img src="img/button-icons/right.svg" alt="next"></a>
 

@@ -22,42 +22,18 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($favourites as $fav)
                 <tr>
-                    <td>А.С. Пушкин</td>
-                    <td>Евгений Онегин</td>
-                    <td><img src="img/icons/paper-book.svg" alt="paper book"></td>
-                    <td>650 ₽</td>
+                    <td>{{ $fav->authorship->author->name }} {{ $fav->authorship->author->surname }}</td>
+                    <td>{{ $fav->authorship->book->title }}</td>
+                    <td><img src="{{ asset('storage/icons/' . basename($fav->authorship->book->booksType->type_img)) }}"
+                             alt="нет иконки"></td>
+                    <td>{{ $fav->authorship->book->price }} ₽</td>
                     <td>
                         <button class="to-bag-btn">В корзину</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>О. Уальд</td>
-                    <td>Портрет Дориана Грея</td>
-                    <td><img src="img/icons/e-book.svg" alt="e-book"></td>
-                    <td>390 ₽</td>
-                    <td>
-                        <button class="to-bag-btn">В корзину</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Н. Сакавич</td>
-                    <td>Лисья Нора</td>
-                    <td><img src="img/icons/e-book.svg" alt="e-book"></td>
-                    <td>640 ₽</td>
-                    <td>
-                        <button class="to-bag-btn">В корзину</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Мосян Тунсю</td>
-                    <td>Благословение небожителей том 4</td>
-                    <td><img src="img/icons/paper-book.svg" alt="paper book"></td>
-                    <td>1250 ₽</td>
-                    <td>
-                        <button class="to-bag-btn">В корзину</button>
-                    </td>
-                </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

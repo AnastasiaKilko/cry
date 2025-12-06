@@ -1,6 +1,6 @@
-<!--НАДО БУДЕТ ПОТОМ УДАЛИТЬ-->
-
 <?php
+
+//<!--НАДО БУДЕТ ПОТОМ УДАЛИТЬ-->
 
 use App\Http\Controllers\BookController;
 use Illuminate\Http\Request;
@@ -10,6 +10,6 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //})->middleware('auth:sanctum');
 
-Route::controller(BookController::class)->group(function () {
-    Route::post('/create/bookType', 'bookType');
+Route::controller(\App\Http\Controllers\FavController::class)->group(function () {
+    Route::get('/fav', 'fav');
 });

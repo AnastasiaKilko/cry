@@ -22,5 +22,9 @@ class Authorship extends Model
     {
         return $this->belongsTo(Author::class, 'id_authors', 'id');
     }
+    public function favourites()
+    {
+        return $this->hasMany(Favourites::class);
+    }
 
 }

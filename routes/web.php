@@ -40,6 +40,10 @@ Route::controller(ReviewController::class)->group(function () { //FIX IT
     Route::post('/write-review', 'create')->name('reviewModalPage');
 });
 
+Route::controller(\App\Http\Controllers\FavController::class)->group(function () {
+   Route::post('/favorites/{id}', 'addToFavs')->name('fav');
+   Route::get('/favorites', 'fav')->name('favourites');
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -64,10 +68,6 @@ Route::get('/about-us', function () {
 Route::get('/e-book-reader', function () {
     return view('eBookReader');
 })->name('eBookReader');
-
-Route::get('/favourites', function () {
-    return view('favourites');
-})->name('favourites');
 
 Route::get('/write-review', function () {
     return view('reviewModalPage');
