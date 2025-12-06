@@ -63,7 +63,6 @@ class BookController extends Controller
             'id_authors' => $author->id,
         ]);
 
-
         $publisher = Publisher::where('publisher_name', $request->input('publisher_name'))
             ->first();
 
@@ -78,8 +77,8 @@ class BookController extends Controller
             'id_publishers' => $publisher->id,
             'release_year' => $request->input('release_year'),
         ]);
-//        return redirect('/book-page/{id}');
-//        НАДО УТОЧНИТЬ КАК РЕДИРЕКТНУТЬ НА ТОЛЬКО ЧТО СОЗДАННУЮ КНИГУ
+
+        return redirect()->route('bookPage', ['id' => $book->id]);
     }
 
     public function catalog() {
@@ -124,7 +123,6 @@ class BookController extends Controller
             ->where('id_books', $id)
             ->get();
 
-
         $publication = Publication::with(['book' => function($q) {
             $q->select('id', 'cover_image', 'title', 'ISBN', 'id_age_limit', 'id_book_types', 'pages', 'size',
                 'book_cover','copies', 'weight', 'filesize', 'file_format', 'price', 'summary')
@@ -134,7 +132,6 @@ class BookController extends Controller
         }])
             ->where('id_books', $id)
             ->get();
-
 
         return view('/bookPage', compact('authorship', 'publication'));
     }
@@ -149,6 +146,4 @@ class BookController extends Controller
             'type_img' => $url,
         ]);
     }
-
-
 }

@@ -64,8 +64,6 @@
                         <label for="e_book_link">Введите ссылку на электронную книгу</label><br>
                         <input type="text" id="e_book_link" name="e_book_link"><br><br>
                     </div>
-
-
                 </fieldset>
 
                 <fieldset class="register">
