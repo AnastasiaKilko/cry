@@ -31,9 +31,12 @@
                                 <h5>{{ number_format($eCatalog->book->price) }} ₽</h5>
                                 <div class="book-order-btns">
                                     <button class="to-bag-btn">В корзину</button>
-                                    <button class="heart-btn">
-                                        <img src="img/icons/heart-sm.svg" alt="fav">
-                                    </button>
+                                    <form action="{{route('fav', ['id' => $eCatalog->id])}}" method="post">
+                                        @csrf
+                                        <button class="heart-btn">
+                                            <img src="img/icons/heart-sm.svg" alt="fav">
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         @endforeach
