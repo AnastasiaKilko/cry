@@ -30,7 +30,10 @@
                                 </a>
                                 <h5>{{ number_format($eCatalog->book->price) }} ₽</h5>
                                 <div class="book-order-btns">
-                                    <button class="to-bag-btn">В корзину</button>
+                                    <form action="{{route('addToShoppingBag', ['id' => $eCatalog->id])}}" method="post">
+                                        @csrf
+                                        <button class="to-bag-btn">В корзину</button>
+                                    </form>
                                     <form action="{{route('fav', ['id' => $eCatalog->id])}}" method="post">
                                         @csrf
                                         <button class="heart-btn">

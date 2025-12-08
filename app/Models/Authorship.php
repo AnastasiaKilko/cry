@@ -26,5 +26,8 @@ class Authorship extends Model
     {
         return $this->hasMany(Favourites::class);
     }
-
+    public function shopping_bag()
+    {
+        return $this->hasMany(ShoppingBag::class);
+    }
 }

@@ -10,19 +10,20 @@
 <div class="wrapper">
     @include('header')
     <main>
-        <div class="favourites">
+        <div class="favs-n-cart">
             <h2>Избранное</h2>
             @if($favourites->isEmpty())
-                <br><br>
-                <p>Здесь пока ничего нет. Чтобы добавить книгу в корзину, перейдите в Каталог или Электронную
-                    библиотку.</p>
-                <div class="catalogue-btns">
-                    <a href="{{route('catalogue')}}">
-                        <button class="yellow-btn">Каталог</button>
-                    </a>
-                    <a href="{{route('eCatalogue')}}">
-                        <button class="blue-btn">Электронная библиотека</button>
-                    </a>
+                <div class="empty-note">
+                    <p>Здесь пока ничего нет. Чтобы добавить книгу в корзину, перейдите в Каталог или Электронную
+                        библиотку.</p>
+                    <div class="catalogue-btns">
+                        <a href="{{route('catalogue')}}">
+                            <button class="yellow-btn">Каталог</button>
+                        </a>
+                        <a href="{{route('eCatalogue')}}">
+                            <button class="blue-btn">Электронная библиотека</button>
+                        </a>
+                    </div>
                 </div>
             @else
                 <table>

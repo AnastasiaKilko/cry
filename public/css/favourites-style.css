@@ -1,47 +1,53 @@
-.favourites {
+.favs-n-cart {
     margin: 0 auto;
     width: 90%;
     display: flex;
     flex-direction: column;
     min-height: 60vh;
 }
-.favourites h2 {
+.favs-n-cart h2 {
     font-size: 2.5rem;
     font-weight: var(--text-weight-bold);
     color: var(--accent-color2);
 }
-.favourites table {
+.empty-note p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: var(--text-color);
+    margin: 5rem 5rem;
+}
+.favs-n-cart table {
     margin: 2rem auto;
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
 }
-.favourites th {
+.favs-n-cart th {
     text-align: left;
     border-bottom: 1px solid rgba(44, 44, 44, 0.3);
     padding: 4px 10px;
 }
-.favourites th:nth-child(3) {
+.favs-n-cart th:nth-child(3) {
     text-align: center;
 }
-.favourites th:nth-child(4) {
+.favs-n-cart th:nth-child(4) {
     text-align: center;
 }
-.favourites table td {
+.favs-n-cart table td {
     font-size: 1rem;
     line-height: 1.2rem;
     text-align: left;
     padding: 2px 10px;
 }
-.favourites td:nth-child(3) {
+.favs-n-cart td:nth-child(3) {
     text-align: center;
 }
-.favourites td:nth-child(4) {
+.favs-n-cart td:nth-child(4) {
     text-align: center;
 }
-.favourites table td:last-child {
+.favs-n-cart table td:last-child {
     text-align: right;
 }
-.favourites img {
+.favs-n-cart img {
     height: 2rem;
 }

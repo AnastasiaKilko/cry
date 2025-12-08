@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FavController;
+use App\Http\Controllers\ShoppingBagController;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 
@@ -40,9 +42,14 @@ Route::controller(ReviewController::class)->group(function () { //FIX IT
     Route::post('/write-review', 'create')->name('reviewModalPage');
 });
 
-Route::controller(\App\Http\Controllers\FavController::class)->group(function () {
+Route::controller(FavController::class)->group(function () {
    Route::post('/favorites/{id}', 'addToFavs')->name('fav');
    Route::get('/favorites', 'fav')->name('favourites');
+});
+
+Route::controller(ShoppingBagController::class)->group(function () {
+    Route::post('/shopping-bag/{id}', 'addToCart')->name('addToShoppingBag');
+    Route::get('/shopping-bag', 'cart')->name('shoppingBag');
 });
 
 Route::get('/', function () {
@@ -72,10 +79,6 @@ Route::get('/e-book-reader', function () {
 Route::get('/write-review', function () {
     return view('reviewModalPage');
 })->name('reviewModalPage');
-
-Route::get('/shopping-bag', function () {
-    return view('shoppingBag');
-})->name('shoppingBag');
 
 Route::get('/special-offers', function () {
     return view('specialOffers');

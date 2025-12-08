@@ -83,7 +83,10 @@
                             <h5>{{ number_format($catalog->book->price) }} ₽</h5>
 
                         </div>
-                        <button class="to-bag-btn">В корзину</button>
+                        <form action="{{route('addToShoppingBag', ['id' => $catalog->id])}}" method="post">
+                            @csrf
+                            <button class="to-bag-btn">В корзину</button>
+                        </form>
                         <form action="{{route('fav', ['id' => $catalog->id])}}" method="post">
                             @csrf
                             <button class="to-fav-btn">В избранное</button>

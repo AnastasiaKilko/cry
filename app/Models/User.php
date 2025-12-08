@@ -50,6 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Favourites::class);
     }
+    public function shopping_bag()
+    {
+        return $this->hasMany(ShoppingBag::class);
+    }
     public function review() {
         return $this->hasMany(Review::class);
     }

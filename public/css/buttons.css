@@ -17,6 +17,13 @@
     background-color: rgba(245, 196, 93, 0.5);
     cursor: pointer;
 }
+.to-bag-btn:active {
+    background-color: rgb(210, 168, 79);
+}
+.to-bag-btn:disabled {
+    background-color: rgb(175, 175, 175);
+    color: var(--text-secondary-color);
+}
 .to-fav-btn {
     font-family: 'Rubik';
     width: 8rem;
@@ -31,6 +38,12 @@
 .to-fav-btn:hover {
     background-color: rgb(172, 192, 191);
     cursor: pointer;
+}
+.to-fav-btn:active {
+    background-color: rgb(67, 97, 94);
+}
+.to-fav-btn:disabled {
+    background-color: rgb(175, 175, 175);
 }
 .blue-btn {
     font-family: 'Rubik';
