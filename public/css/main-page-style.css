@@ -50,10 +50,19 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 60%;
+    width: 70%;
     background-color: var(--secondary-color);
     border: 1.5rem solid var(--secondary-color);
     height: 35rem;
+}
+.book-type-pic {
+    display: flex;
+    width: 45%;
+    justify-content: space-between;
+    align-items: center;
+}
+.book-type-pic img {
+    height: 3rem;
 }
 .day-book-desc {
     width: 90%;

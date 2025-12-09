@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FavController;
@@ -52,10 +53,6 @@ Route::controller(ShoppingBagController::class)->group(function () {
     Route::get('/shopping-bag', 'cart')->name('shoppingBag');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
 Route::get('/403', function () {
     return view('error403');
 })->name('error403');
@@ -84,6 +81,9 @@ Route::get('/special-offers', function () {
     return view('specialOffers');
 })->name('specialOffers');
 
-Route::controller(BookController::class)->group(function () {
-    Route::get('/catalog/{id}', 'bookPage')->name('catalog');
+//Route::controller(BookController::class)->group(function () {
+//    Route::get('/catalog/{id}', 'bookPage')->name('catalog');
+//});
+Route::controller(MainController::class)->group(function () {
+    Route::get('/', 'dayBook')->name('welcome');
 });

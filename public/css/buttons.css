@@ -15,7 +15,6 @@
 }
 .to-bag-btn:hover {
     background-color: rgba(245, 196, 93, 0.5);
-    cursor: pointer;
 }
 .to-bag-btn:active {
     background-color: rgb(210, 168, 79);

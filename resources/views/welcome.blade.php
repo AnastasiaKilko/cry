@@ -18,27 +18,30 @@
         <section class="book-block">
             <div class="book-block">
                 <div class="day-book">
-                    <a href="book-page.html"><img src="img/bookcover1.jpg" alt="А.С.Пушкин, Евгений Онегин"></a>
-                    <div class="day-book-info">
-                        <div class="day-book-desc">
-                            <h3>Книга дня</h3>
-                            <h4>А.С. Пушкин "Евгений Онегин"</h4>
-                            <p>Великий роман в ярком современном оформлении. <br>Самый известный роман в стихах А.С.
-                                Пушкина
-                                назван В.Г. Белинским “энциклопедией русской жизни”.
-                                <br>Пушкин писал “Евгения Онегина” больше семи лет и называл работу над книгой
-                                подвигом. Каждая глава издавалась отдельным выпуском и становилась событием
-                                литературной жизни. В истории молодого повесы Онегина каждое поколение открывает
-                                что-то новое там, где все казалось ясным.</p>
-                        </div>
-                        <div class="day-book-order-block">
-                            <div class="day-book-price">
-                                <h5>650 ₽</h5>
-                                <h4>450 ₽</h4>
+                    @foreach($authorship as $catalog)
+                        <img src="{{ asset('storage/cover_images/' . basename($catalog->book->cover_image)) }}"
+                             alt="нет обложки">
+                        <div class="day-book-info">
+                            <div class="day-book-desc">
+                                <div class="book-type-pic">
+                                    <h3>Книга дня</h3>
+                                    <img src="{{ asset('storage/icons/' . basename($catalog->book->booksType->type_img)) }}" alt="нет иконки">
+                                </div>
+
+
+                                <h4>{{ $catalog->author->name }} {{ $catalog->author->surname }}
+                                    "{{ $catalog->book->title }}"</h4>
+                                <p>{{ $catalog->book->summary }}</p>
                             </div>
-                            <button class="to-bag-btn">В корзину</button>
+                            <div class="day-book-order-block">
+                                <div class="day-book-price">
+                                    <h5>{{ number_format($catalog->book->price) }} ₽</h5>
+                                    <h4>{{ number_format($sale) }} ₽</h4>
+                                </div>
+                                <button class="to-bag-btn">В корзину</button>
+                            </div>
+                            @endforeach
                         </div>
-                    </div>
                 </div>
                 <div class="main-buttons">
                     <button onclick="document.location='error403.html'" class="blue-btn">Хиты продаж</button>
