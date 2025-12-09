@@ -48,6 +48,10 @@ header .search-line input {
     border-bottom: 1px solid var(--bg-color);
     width: 50vw;
 }
+header .search-line button {
+    border: none;
+    background-color: transparent;
+}
 header .search-line img {
     cursor: pointer;
     height: 1.5rem;

@@ -86,4 +86,6 @@ Route::get('/special-offers', function () {
 //});
 Route::controller(MainController::class)->group(function () {
     Route::get('/', 'dayBook')->name('welcome');
+    Route::get('/search', 'searchBooks')->name('search');
 });
+

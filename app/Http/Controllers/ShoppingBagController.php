@@ -10,25 +10,29 @@ class ShoppingBagController extends Controller
 {
     public function addToCart($id)
     {
-        $userCart = ShoppingBag::where('id_users', Auth::user()->id)->get();
+        if(!Auth::user()){
+            return redirect()->route('login');
+        } else{
+            $userCart = ShoppingBag::where('id_users', Auth::user()->id)->get();
 
-        if ($userCart->isEmpty()) {
-            ShoppingBag::create([
-                'id_users' => Auth::user()->id,
-                'id_authorship' => $id,
-            ]);
-        } else {
-            $shoppingBag = $userCart->where('id_authorship', $id)->first();
-            if ($shoppingBag) {
-                $shoppingBag->delete();
-            } else {
+            if ($userCart->isEmpty()) {
                 ShoppingBag::create([
                     'id_users' => Auth::user()->id,
                     'id_authorship' => $id,
                 ]);
+            } else {
+                $shoppingBag = $userCart->where('id_authorship', $id)->first();
+                if ($shoppingBag) {
+                    $shoppingBag->delete();
+                } else {
+                    ShoppingBag::create([
+                        'id_users' => Auth::user()->id,
+                        'id_authorship' => $id,
+                    ]);
+                }
             }
+            return redirect()->back();
         }
-        return redirect()->back();
     }
     public function cart()
     {

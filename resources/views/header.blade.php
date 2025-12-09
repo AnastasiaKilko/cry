@@ -21,10 +21,13 @@
                     <a href={{ route('eBookReader') }}>Читалка</a>
                 </nav>
                 <div class="search-line">
-                    <form>
-                        <input type="text" name="search" placeholder="Введите текст...">
+                    <form method="get" action="{{ route('search') }}">
+                        <input type="text" name="search" placeholder="Введите текст..."
+                               value="{{ request('search') }}">
+                        <button type="submit">
+                            <img src="{{ asset('img/icons/search.svg') }}" alt="search">
+                        </button>
                     </form>
-                    <img src="{{ asset('img/icons/search.svg') }}" alt="search">
                 </div>
             </div>
             <div class="icons">

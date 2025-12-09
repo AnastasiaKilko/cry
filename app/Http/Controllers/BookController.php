@@ -9,6 +9,7 @@ use App\Models\Book;
 use App\Models\BooksType;
 use App\Models\Publication;
 use App\Models\Publisher;
+use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
