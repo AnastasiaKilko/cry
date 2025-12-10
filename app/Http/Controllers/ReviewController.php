@@ -2,28 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Book;
+use App\Models\Authorship;
+use App\Models\Publication;
 use App\Models\Review;
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewController extends Controller
 {
-    public function index() {
-        $book = Book::all();
-        $user = User::all();
+    public function index($id) {
+        $authorship = Authorship::with(['book:id'])
+        ->where('id_books', $id)
+        ->first();
 
-        return view('reviewModalPage', compact('book', 'user'));
+        return view('review', compact('authorship'));
     }
-    public function create(Request $request)
+
+    public function create(Request $request, $id)
     {
-        $review = Review::create([
-            'id_books' => $request->input('id_books'),
-            'id_user' => $request->input('id_user'),
+        Review::create([
+            'id_books' => $id,
+            'id_user' => Auth::user()->id,
             'rating' => $request->input('rating'),
             'text' => $request->input('text'),
-
         ]);
+
+        return redirect()->route('bookPage', compact('id'));
     }
 
 }

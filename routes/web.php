@@ -39,8 +39,8 @@ Route::controller(BookController::class)->group(function () {
 });
 
 Route::controller(ReviewController::class)->group(function () { //FIX IT
-    Route::get('/write-review', 'index')->name('reviewModalPage');
-    Route::post('/write-review', 'create')->name('reviewModalPage');
+    Route::get('/write-review/{id}', 'index')->name('review');
+    Route::post('/write-review/{id}', 'create')->name('review');
 });
 
 Route::controller(FavController::class)->group(function () {
@@ -75,9 +75,6 @@ Route::get('/e-book-reader', function () {
     return view('eBookReader');
 })->name('eBookReader');
 
-Route::get('/write-review', function () {
-    return view('reviewModalPage');
-})->name('reviewModalPage');
 
 Route::get('/special-offers', function () {
     return view('specialOffers');

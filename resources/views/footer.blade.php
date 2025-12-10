@@ -13,12 +13,12 @@
             <div class="footer-block">
                 <div class="footer-info">
                     <div class="footer-info-text">
-                        <h3>Книжный интернет-магазин Ex Libris</h3>
+                        <h3>Книжный интернет-магазин <br>Ex Libris</h3>
                         <p>Ex Libris – это книжный магазин, осуществляющий доставку книг по всей России.
                             <br><br>А ещё это – магазин электронных книг, которые Вы можете читать прямо на нашем сайте.
                         </p>
                     </div>
-                    <p>© 2024, Ex Libris</p>
+                    <p>© 2025, Ex Libris</p>
                 </div>
                 <div class="footer-contacts">
                     <div class="footer-contacts-text">

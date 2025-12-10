@@ -9,6 +9,7 @@ use App\Models\Book;
 use App\Models\BooksType;
 use App\Models\Publication;
 use App\Models\Publisher;
+use App\Models\Review;
 use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -134,7 +135,12 @@ class BookController extends Controller
             ->where('id_books', $id)
             ->get();
 
-        return view('/bookPage', compact('authorship', 'publication'));
+        $review = Review::with(['user:id,login'])
+            ->where('id_books', $id)
+            ->whereHas('user') 
+            ->get();
+
+        return view('/bookPage', compact('authorship', 'publication', 'review'));
     }
 
     public function bookType(Request $request)

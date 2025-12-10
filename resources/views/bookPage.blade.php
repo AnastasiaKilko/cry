@@ -79,7 +79,8 @@
 
                     <div class="book-info-main-interaction">
                         <div class="book-info-main-interaction-variables">
-                            <img src="{{ asset('storage/icons/' . basename($catalog->book->booksType->type_img)) }}" alt="нет иконки">
+                            <img src="{{ asset('storage/icons/' . basename($catalog->book->booksType->type_img)) }}"
+                                 alt="нет иконки">
                             <h5>{{ number_format($catalog->book->price) }} ₽</h5>
 
                         </div>
@@ -182,11 +183,14 @@
                     </div>
                 </article>
             </div>
-
-            <a class="yellow-btn" href="{{ route('reviewModalPage') }}">Напишите отзыв!</a>
-
-
+            <a class="yellow-btn" href="{{ route('review', $catalog->book->id) }}">Напишите отзыв!</a>
         </section>
+
+        @foreach($review as $rev)
+            <p>{{$rev->user->login}}</p>
+            <p>{{$rev->rating}}</p>
+            <p>{{$rev->text}}</p>
+        @endforeach
     </main>
     @include('footer')
 </div>
