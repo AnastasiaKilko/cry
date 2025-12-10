@@ -12,6 +12,8 @@ class ShoppingBag extends Model
     protected $fillable = [
         'id_authorship',
         'id_users',
+        'amount',
+        'amount_price',
     ];
 
     public function authorship()

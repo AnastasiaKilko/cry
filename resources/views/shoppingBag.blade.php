@@ -33,6 +33,8 @@
                         <th>Название</th>
                         <th>Вид книги</th>
                         <th>Цена</th>
+                        <th>Количество</th>
+                        <th>Сумма</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -45,12 +47,30 @@
                                      alt="нет иконки"></td>
                             <td>{{ number_format($cart->authorship->book->price) }} ₽</td>
                             <td>
-                                <button class="to-bag-btn">К оплате</button>
+                                <div class="count">
+                                <form action="{{route('minus', ['id' => $cart->id])}}" method="post">
+                                    @csrf
+                                    <button class="square-yellow-btn">-</button>
+                                </form>
+
+                                {{ $cart->amount }}
+
+                                <form action="{{route('plus', ['id' => $cart->id])}}" method="post">
+                                    @csrf
+                                    <button class="square-yellow-btn">+</button>
+                                </form>
+                                </div>
                             </td>
+                            <td>{{ $cart->amount_price }} ₽</td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
+
+                <div class="cost">
+                    <h4>Стоимость: {{ $cost }} ₽</h4>
+                    <button class="to-bag-btn">К оплате</button>
+                </div>
             @endif
         </div>
     </main>

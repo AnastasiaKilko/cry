@@ -51,6 +51,8 @@ Route::controller(FavController::class)->group(function () {
 Route::controller(ShoppingBagController::class)->group(function () {
     Route::post('/shopping-bag/{id}', 'addToCart')->name('addToShoppingBag');
     Route::get('/shopping-bag', 'cart')->name('shoppingBag');
+    Route::post('/plus/{id}', 'plus')->name('plus');
+    Route::post('/minus/{id}', 'minus')->name('minus');
 });
 
 Route::get('/403', function () {
