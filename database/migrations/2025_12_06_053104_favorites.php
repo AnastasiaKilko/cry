@@ -14,7 +14,6 @@ return new class extends Migration
             $table->foreignId('id_users');
         });
     }
-
     public function down(): void
     {
         Schema::dropIfExists('favourites');

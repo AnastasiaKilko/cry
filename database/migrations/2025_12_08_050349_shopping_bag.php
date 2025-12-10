@@ -12,6 +12,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_authorship');
             $table->foreignId('id_users');
+            $table->unsignedMediumInteger('amount');
+            $table->unsignedMediumInteger('amount_price');
         });
     }
 

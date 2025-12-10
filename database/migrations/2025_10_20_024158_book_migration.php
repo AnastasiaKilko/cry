@@ -6,13 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->string('cover_image')->nullable();
             $table->string('name');
             $table->string('ISBN');
             $table->foreignId('id_age_limit');
@@ -26,12 +24,10 @@ return new class extends Migration
             $table->string('file_format')->nullable();
             $table->decimal('price', 8, 2)->nullable();
             $table->string('e-book-link')->nullable();
+            $table->text('summary')->nullable();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('books');
