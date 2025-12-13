@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
-    public $timestamps = false;
+//    public $timestamps = false;
     protected $table = 'reviews';
 
     protected $fillable = [
@@ -17,10 +17,10 @@ class Review extends Model
     ];
     public function book()
     {
-        return $this->belongsTo(Book::class);
+        return $this->belongsTo(Book::class, 'id_books', 'id');
     }
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 }

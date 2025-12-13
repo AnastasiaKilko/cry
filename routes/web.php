@@ -36,6 +36,7 @@ Route::controller(BookController::class)->group(function () {
     Route::get('/catalogue', 'catalog')->name('catalogue');
     Route::get('/e-catalogue', 'eCatalog')->name('eCatalogue');
     Route::get('/book-page/{id}', 'bookPage')->name('bookPage');
+//    Route::get('/book-page/{id}', 'pagination')->name('bookPage'); 
 });
 
 Route::controller(ReviewController::class)->group(function () { //FIX IT

@@ -105,92 +105,26 @@
         <section class="book-reviews">
             <h3>Отзывы</h3>
             <div class="book-reviews-table">
-                <article class="book-review">
-                    <div class="book-review-pic-date">
-                        <img src="{{ asset('img/icons/profile-circle.svg') }}" alt="profile picture">
-                        <p>21.10.2023</p>
-                    </div>
-                    <div class="book-review-main">
-                        <div class="book-review-head">
-                            <h6>Имя Автора отзыва</h6>
-                            <div class="rating-stars-show">
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
+                @foreach($review as $rev)
+                    <article class="book-review">
+                            <div class="book-review-head">
+                                <div class="login-n-date">
+                                    <h6>{{ $rev->user->login }}</h6>
+                                    <p>21.10.2023</p>
+                                </div>
+                                <div class="rating-stars-show">
+                                    @for($i = 1; $i <= 5; $i++)
+                                        <span class="checked-star {{ $i <= $rev->rating ? 'checked-star' : 'unchecked-star'}}">★</span>
+                                    @endfor
+                                </div>
                             </div>
-                        </div>
-                        <p>Положительный отзыв очень крутая книга! Пушкин наше всё </p>
-                    </div>
-                </article>
-                <article class="book-review">
-                    <div class="book-review-pic-date">
-                        <img src="{{ asset('img/icons/profile-circle.svg') }}" alt="profile picture">
-                        <p>21.10.2023</p>
-                    </div>
-                    <div class="book-review-main">
-                        <div class="book-review-head">
-                            <h6>Имя Автора отзыва</h6>
-                            <div class="rating-stars-show">
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="unchecked-star">★</p>
-                            </div>
-                        </div>
-                        <p>А чё так дорого </p>
-                    </div>
-                </article>
-                <article class="book-review">
-                    <div class="book-review-pic-date">
-                        <img src="{{ asset('img/icons/profile-circle.svg') }}" alt="profile picture">
-                        <p>21.10.2023</p>
-                    </div>
-                    <div class="book-review-main">
-                        <div class="book-review-head">
-                            <h6>Имя Автора отзыва</h6>
-                            <div class="rating-stars-show">
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                            </div>
-                        </div>
-                        <p>Книга огонь, доставили быстро и всё такое </p>
-                    </div>
-                </article>
-                <article class="book-review">
-                    <div class="book-review-pic-date">
-                        <img src="{{ asset('img/icons/profile-circle.svg') }}" alt="profile picture">
-                        <p>21.10.2023</p>
-                    </div>
-                    <div class="book-review-main">
-                        <div class="book-review-head">
-                            <h6>Имя Автора отзыва</h6>
-                            <div class="rating-stars-show">
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                                <p class="checked-star">★</p>
-                            </div>
-                        </div>
-                        <p>Шикарное издание просто пушка! Мне так нравится, так нравится, не могу сдерждать слёз! Книга
-                            - восторг! Ваш магазин - восторг! Была бы моя воля, поставила бы 100 звёзд!</p>
-                    </div>
-                </article>
+                            <p>{{ $rev->text }}</p>
+                    </article>
+                @endforeach
             </div>
+
             <a class="yellow-btn" href="{{ route('review', $catalog->book->id) }}">Напишите отзыв!</a>
         </section>
-
-        @foreach($review as $rev)
-            <p>{{$rev->user->login}}</p>
-            <p>{{$rev->rating}}</p>
-            <p>{{$rev->text}}</p>
-        @endforeach
     </main>
     @include('footer')
 </div>

@@ -85,57 +85,50 @@
 }
 .book-reviews-table {
     display: grid;
+    width: 60%;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 35vw);
-    gap: 10%;
+    gap: 5%;
     margin-bottom: 2%;
 }
 .book-review {
     display: flex;
     background-color: var(--secondary-color);
-    border: 10px solid var(--secondary-color);
+    border: 15px solid var(--secondary-color);
     gap: 5%;
-}
-
-.book-review-pic-date {
-    display: flex;
-    flex-direction: column;
-    gap: 2%;
-    align-items: center;
-}
-.book-review-pic-date img {
-    height: 4rem;
-    border-radius: 50%;
-}
-.book-review-pic-date p {
-    font-size: 0.8rem;
-}
-.book-review-main {
-    display: flex;
     flex-direction: column;
 }
-
 .book-review-head {
-    width: 25vw;
+    width: 90%;
+    margin-left: 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2%;
 }
-.book-review-head h6 {
+.book-review p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    width: 90%;
+    padding-left: 5%;
+}
+.login-n-date {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+.login-n-date h6 {
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: var(--text-weight);
     background-color: rgba(245, 196, 93, .5);
-    padding-left: 1%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
     border-radius: 5px;
 }
-.book-review-main:last-child {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    width: 30vw;
-}
+.login-n-date p {
+     font-size: 0.8rem;
+ }
 .rating-stars-show {
     display: flex;
 }
@@ -145,7 +138,7 @@
 }
 .unchecked-star {
     font-size: 1.5rem;
-    color: var(--secondary-color);
+    color: rgba(44, 44, 44, 0.3);
     filter: drop-shadow(0 0 1px rgba(245, 196, 93, 1));
 }
 .book-reviews .yellow-btn {

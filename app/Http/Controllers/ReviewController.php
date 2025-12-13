@@ -29,5 +29,4 @@ class ReviewController extends Controller
 
         return redirect()->route('bookPage', compact('id'));
     }
-
 }
