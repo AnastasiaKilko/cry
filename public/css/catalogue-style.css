@@ -17,21 +17,8 @@
 .catalogue-heading img {
     height: 3rem;
 }
-.genres {
-    display: flex;
-    flex-direction: column;
-    height: 30%;
-    align-self: center;
-
-}
-.genres h3 {
-    font-size: 1.8rem;
-    font-weight: var(--text-weight-semibold);
-    color: var(--accent-color1);
-    margin: 2rem 0;
-}
 .books {
-    margin: 0 auto;
+    margin: 2rem auto;
     display: flex;
     align-items: center;
     width: 100%;

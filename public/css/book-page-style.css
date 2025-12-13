@@ -73,8 +73,7 @@
     margin: 2% auto;
     display: flex;
     flex-direction: column;
-    width: 80%;
-
+    width: 90%;
 }
 .book-reviews h3 {
     font-size: 1.5rem;
@@ -82,13 +81,21 @@
     font-weight: var(--text-weight-semibold);
     color: var(--accent-color2);
     margin-bottom: 2%;
+    margin-left: 7%;
+}
+.paginate {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 .book-reviews-table {
     display: grid;
-    width: 60%;
+    width: 80%;
     grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 35vw);
-    gap: 5%;
+    grid-template-columns: repeat(2, 47%);
+    gap: 6%;
     margin-bottom: 2%;
 }
 .book-review {
@@ -147,4 +154,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+ul.pag {
+    list-style: none !important;
 }

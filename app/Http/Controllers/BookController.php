@@ -93,7 +93,7 @@ class BookController extends Controller
             ->whereHas('book', function($query) {
                 $query->where('id_book_types', 2);
             })
-            ->get();
+            ->paginate(10);
 
         return view('catalogue', compact('authorship'));
     }
@@ -137,8 +137,8 @@ class BookController extends Controller
 
         $review = Review::with(['user:id,login'])
             ->where('id_books', $id)
-            ->whereHas('user') 
-            ->get();
+            ->whereHas('user')
+            ->paginate(4);
 
         return view('bookPage', compact('authorship', 'publication', 'review'));
     }
@@ -152,10 +152,5 @@ class BookController extends Controller
             'type' => $request->input('type'),
             'type_img' => $url,
         ]);
-    }
-
-    public function pagination(){
-        $reviews = Review::paginate(4);
-        return view('bookPage', compact('reviews'));
     }
 }

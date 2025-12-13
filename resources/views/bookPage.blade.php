@@ -104,27 +104,37 @@
 
         <section class="book-reviews">
             <h3>Отзывы</h3>
-            <div class="book-reviews-table">
-                @foreach($review as $rev)
-                    <article class="book-review">
-                            <div class="book-review-head">
-                                <div class="login-n-date">
-                                    <h6>{{ $rev->user->login }}</h6>
-                                    <p>21.10.2023</p>
+            @if($review->isEmpty())
+                <p>Отзывов пока нет!</p>
+            @else
+                <div class="paginate">
+                    {{ $review->links('vendor.pagination.left') }}
+                    <div class="book-reviews-table">
+                        @foreach($review as $rev)
+                            <article class="book-review">
+                                <div class="book-review-head">
+                                    <div class="login-n-date">
+                                        <h6>{{ $rev->user->login }}</h6>
+                                        <p>21.10.2023</p>
+                                    </div>
+                                    <div class="rating-stars-show">
+                                        @for($i = 1; $i <= 5; $i++)
+                                            <span class="checked-star {{ $i <= $rev->rating ? 'checked-star' : 'unchecked-star'}}">★</span>
+                                        @endfor
+                                    </div>
                                 </div>
-                                <div class="rating-stars-show">
-                                    @for($i = 1; $i <= 5; $i++)
-                                        <span class="checked-star {{ $i <= $rev->rating ? 'checked-star' : 'unchecked-star'}}">★</span>
-                                    @endfor
-                                </div>
-                            </div>
-                            <p>{{ $rev->text }}</p>
-                    </article>
-                @endforeach
-            </div>
-
+                                <p>{{ $rev->text }}</p>
+                            </article>
+                        @endforeach
+                    </div>
+                    {{ $review->links('vendor.pagination.right') }}
+                </div>
+                {{ $review->links('vendor.pagination.dots') }}
+            @endif
             <a class="yellow-btn" href="{{ route('review', $catalog->book->id) }}">Напишите отзыв!</a>
+
         </section>
+
     </main>
     @include('footer')
 </div>
