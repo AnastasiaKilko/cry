@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('id_user');
             $table->enum('rating', ['1', '2', '3', '4', '5']);
             $table->string('text');
+            $table->string('date');
         });
     }
 

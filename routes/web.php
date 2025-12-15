@@ -27,8 +27,10 @@ Route::controller(UserController::class)->group(function () {
     Route::post('/change-profile', 'register')->name('register'); //FIX IT
 });
 Route::get('/change-profile', function () {
-    return view('changePersonalDataModal');
-})->name('changePersonalDataModal');
+    return view('changeProfile');
+})->name('changeProfile');
+Route::middleware('auth')->put('/change-profile', [\App\Http\Controllers\UserController::class, 'update'])
+    ->name('profile.update');
 
 Route::controller(BookController::class)->group(function () {
     Route::get('/create-book', 'index')->name('createBook');

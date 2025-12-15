@@ -160,3 +160,18 @@ ul.pagination{
 .logout-button:hover img {
     filter: drop-shadow(0 0 3px rgba(245, 196, 93, .9));
 }
+.reset-btn {
+    font-family: 'Rubik';
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    border: 1px solid var(--accent-color1);
+    cursor: pointer;
+}
+.reset-btn:hover {
+    background-color: rgba(245, 196, 93, 0.5);
+    border: 1px transparent;
+    cursor: pointer;
+}

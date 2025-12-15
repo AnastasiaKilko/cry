@@ -1,13 +1,10 @@
 .modal-window {
-    margin: 0 auto;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 90%;
-    height: 70vh;
-    position: relative;
-    gap: 5vh;
 }
 .modal-window a {
     position: absolute;

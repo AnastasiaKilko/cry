@@ -34,7 +34,7 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                     <label for="login">Введите логин</label><br>
-                    <input type="text" id="login" placeholder="exampleLogin2000" name="login"><br><br>
+                    <input type="text" id="login" placeholder="Login2000" name="login"><br><br>
                     @error('phone_number')
                     <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
