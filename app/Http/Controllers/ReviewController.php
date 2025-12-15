@@ -7,6 +7,7 @@ use App\Models\Publication;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class ReviewController extends Controller
 {
@@ -25,6 +26,7 @@ class ReviewController extends Controller
             'id_user' => Auth::user()->id,
             'rating' => $request->input('rating'),
             'text' => $request->input('text'),
+            'date' => Carbon::today()->format('d.m.Y'),
         ]);
 
         return redirect()->route('bookPage', compact('id'));

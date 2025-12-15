@@ -115,7 +115,7 @@
                                 <div class="book-review-head">
                                     <div class="login-n-date">
                                         <h6>{{ $rev->user->login }}</h6>
-                                        <p>21.10.2023</p>
+                                        <p>{{ $rev->date }}</p>
                                     </div>
                                     <div class="rating-stars-show">
                                         @for($i = 1; $i <= 5; $i++)

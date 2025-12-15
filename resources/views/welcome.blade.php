@@ -52,8 +52,12 @@
         </section>
         <section class="catalogue-main-page">
             <div class="catalogue-btns">
-                <button onclick="document.location='catalogue.html'" class="yellow-btn">Каталог</button>
-                <button onclick="document.location='e-catalogue.html'" class="blue-btn">Электронная библиотека</button>
+                <a href="{{route('catalogue')}}">
+                    <button class="yellow-btn">Каталог</button>
+                </a>
+                <a href="{{route('eCatalogue')}}">
+                    <button class="blue-btn">Электронная библиотека</button>
+                </a>
             </div>
             <div class="catalogue-genres">
                 <a><img src="img/button-icons/left.svg" alt="previous"></a>

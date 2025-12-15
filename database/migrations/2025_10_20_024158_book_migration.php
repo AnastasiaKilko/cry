@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->string('cover_image')->nullable();
-            $table->string('name');
+            $table->string('title');
             $table->string('ISBN');
             $table->foreignId('id_age_limit');
             $table->foreignId('id_book_types');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->unsignedSmallInteger('filesize')->nullable();
             $table->string('file_format')->nullable();
             $table->decimal('price', 8, 2)->nullable();
-            $table->string('e-book-link')->nullable();
+            $table->string('e_book_link')->nullable();
             $table->text('summary')->nullable();
         });
     }

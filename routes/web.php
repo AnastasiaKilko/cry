@@ -55,6 +55,11 @@ Route::controller(ShoppingBagController::class)->group(function () {
     Route::post('/minus/{id}', 'minus')->name('minus');
 });
 
+Route::controller(MainController::class)->group(function () {
+    Route::get('/', 'dayBook')->name('welcome');
+    Route::get('/search', 'searchBooks')->name('search');
+});
+
 Route::get('/403', function () {
     return view('error403');
 })->name('error403');
@@ -75,16 +80,9 @@ Route::get('/e-book-reader', function () {
     return view('eBookReader');
 })->name('eBookReader');
 
-
 Route::get('/special-offers', function () {
     return view('specialOffers');
 })->name('specialOffers');
 
-//Route::controller(BookController::class)->group(function () {
-//    Route::get('/catalog/{id}', 'bookPage')->name('catalog');
-//});
-Route::controller(MainController::class)->group(function () {
-    Route::get('/', 'dayBook')->name('welcome');
-    Route::get('/search', 'searchBooks')->name('search');
-});
+
 
