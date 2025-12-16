@@ -7,12 +7,10 @@
     width: 90%;
 }
 .modal-window a {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-.modal-window a:hover {
-    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
 }
 .modal-window img {
     width: 2rem;

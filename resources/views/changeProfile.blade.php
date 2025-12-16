@@ -13,7 +13,7 @@
         <div class="modal-window">
 {{--            <a href="#"><img src="{{ asset('img/button-icons/close.svg') }}" alt="close"></a>--}}
             <h2>Редактировать личные данные</h2>
-            <form action="{{route('profile.update')}}" method="post">
+            <form action="{{route('update')}}" method="post">
                 @csrf
                 @method('PUT')
                 <fieldset class="personal-data">
@@ -54,19 +54,9 @@
                     <label for="email">Введите новый email</label><br>
                     <input type="email" id="email" value="{{ old('email', Auth::user()->email) }}"
                            placeholder="{{Auth::user()->email}}" name="email"><br><br>
-                    @error('password')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                    <label for="pass1">Введите новый пароль</label><br>
-                    <input type="password" id="pass1" name="password"><br><br>
-                    @error('confirm_password')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                    <label for="pass2">Повторите новый пароль</label><br>
-                    <input type="password" id="pass2" name="confirm_password"><br><br>
                 </fieldset>
                 <div class="form-btns">
-                    <button class="reset-btn" type="reset">Очистить форму</button>
+                    <a href="{{ route('profile', ['id' => Auth::user()->id]) }}" class="reset-btn">Отмена</a>
                     <button class="yellow-btn" type="submit">Сохранить</button>
                 </div>
             </form>
